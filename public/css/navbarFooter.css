@@ -1,0 +1,135 @@
+body {
+    background-color: #29001f;
+}
+.jumbotron{
+    background: transparent;
+    color: #ffffff;
+    /*padding: 395px 25px;*/
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #140113;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #2a88bd;
+    color: #fff !important;
+}
+.left-element{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+.right-element{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.navbar-nav li form input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-bottom: 6px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+.dropdown{
+    margin-top: 10px;
+}
+.dropdown-menu{
+    background: #140113;
+}
+.dropdown-menu li{
+    color: #fff;
+}
+
+.text-muted {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 200%;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+.thumbnail > .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #d9534f;
+    color: #d6dbdc;
+}
+.thumbnail > .btn {
+    padding: 10px 20px;
+    background-color: #4a1a51;
+    color: #d6dbdc;
+    border-radius: 0;
+    transition: .2s;
+}
+
+.footer {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #140113;
+}
+.social{
+    padding-left:25px;
+}
+
+.thumbnail > a img{
+    max-width: 100%; /* do not stretch the bootstrap column */
+}
+
+.img-wrapper{
+    width: 100%;
+    position: relative;
+}
+.img-wrapper > a img{
+    width: 100%;
+    height: 335px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 50%; /* optional: if you want the smallest images to fill the .thumbnail */
+}
+.container-fluid {
+    padding: 35px;
+}
+
+

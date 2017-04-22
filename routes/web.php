@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/company/{id}', 'CompanyProfileController@index');
+Route::get('/companies', 'CompanyBrowserController@index');

@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-xs-4">
                                         <a href="/campaigns/popularity" class="thumbnail">
-                                            <img src="images/campaigns/popularity.jpg" alt="Popularity" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/popularity.jpg') }}" alt="Popularity" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>Popularity</h2>
                                             </div>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-xs-4">
                                         <a href="/campaigns/trending" class="thumbnail">
-                                            <img src="images/campaigns/trending.jpg" alt="Trending" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/trending.jpg') }} " alt="Trending" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>Trending</h2>
                                             </div>
@@ -56,7 +56,7 @@
 
                                     <div class="col-xs-4">
                                         <a href="/campaigns/byDate" class="thumbnail">
-                                            <img src="images/campaigns/calendar.jpg" alt="ByDate" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/calendar.jpg') }} " alt="ByDate" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>By Date</h2>
                                             </div>

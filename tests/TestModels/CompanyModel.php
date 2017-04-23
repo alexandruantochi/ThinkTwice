@@ -31,7 +31,7 @@ class CompanyModel
         $this->description = $description;
         $this->mother = $mother;
         $this->productList = $productList;
-        $this->ratig = $rating;
+        $this->rating = $rating;
         $this->contact = $contact;
         $this->category = $category;
     }
@@ -50,7 +50,7 @@ class CompanyModel
             'Google is an American multinational technology company specializing in Internet-related services and products. These include online advertising technologies, search, cloud computing, software, and hardware.'];
         $mother = ['P&G', 'N/A', 'Body Shop', 'CIA', 'N/A', 'Alphabet'];
         $productList = ['product1', 'product1', 'product3'];
-        $rating = [4.25, 3.4, 4.5, 2.2, 4.5, 4, 72];
+        $rating = [1.25, 2.4, 3.5, 2.2, 4.5, 0.72];
         $contact = ['coca-cola@gmail.com', 'pandg@gmail.com', 'loreal@gmail.com', 'monsato@gmail.com', 'ussteel@gmail.com', 'google@gmail.com'];
         $category = ['Drinks', 'Consumer Goods', 'Cosmetics', 'Farming', 'Industrial Goods', 'IT'];
 

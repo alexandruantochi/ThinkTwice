@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +22,6 @@ Route::get('/companies', 'CompanyBrowserController@index');
 
 Route::get('/campaigns', 'CampaignsController@index');
 
-Route::get('/mainOffPage', 'MainOfflinePageController@mainOffPage');
 Route::get('/home', 'MainPageController@home');
 Route::get('/products', 'ProductsController@products');
 

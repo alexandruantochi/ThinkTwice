@@ -2,7 +2,9 @@
 @section('content')
 
     <section id="search_jumbotron">
+
         <div class="container-fluid">
+
             <div class="jumbotron text-center" >
 
                 <br>
@@ -31,6 +33,11 @@
                     </div><!-- /input-group -->
                 </form>
             </div>
+
+        </div>
+
+        <div class="container-fluid">
+
             <div class="row">
                 <div class="col-xs-12">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -69,14 +76,14 @@
                 </div>
             </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
+        </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
 
-
-
+        <div class="container-fluid">
 
             <nav aria-label="Page navigation" align="center">
                 <ul class="pagination">
@@ -98,11 +105,12 @@
                 </ul>
             </nav>
 
-            <br>
-            <br>
-            <br>
-            <br>
-
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
     </section>
 @endsection

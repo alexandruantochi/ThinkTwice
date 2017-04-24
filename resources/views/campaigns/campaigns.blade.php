@@ -2,7 +2,9 @@
 @section('content')
 
     <section id="search_jumbotron">
+
         <div class="container-fluid">
+
             <div class="jumbotron text-center" >
 
                 <br>
@@ -31,6 +33,11 @@
                     </div><!-- /input-group -->
                 </form>
             </div>
+
+        </div>
+
+        <div class="container-fluid">
+
             <div class="row">
                 <div class="col-xs-12">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -39,7 +46,7 @@
                                 <div class="row">
                                     <div class="col-xs-4">
                                         <a href="/campaigns/popularity" class="thumbnail">
-                                            <img src="images/campaigns/popularity.jpg" alt="Popularity" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/popularity.jpg') }}" alt="Popularity" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>Popularity</h2>
                                             </div>
@@ -47,7 +54,7 @@
                                     </div>
                                     <div class="col-xs-4">
                                         <a href="/campaigns/trending" class="thumbnail">
-                                            <img src="images/campaigns/trending.jpg" alt="Trending" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/trending.jpg') }} " alt="Trending" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>Trending</h2>
                                             </div>
@@ -56,7 +63,7 @@
 
                                     <div class="col-xs-4">
                                         <a href="/campaigns/byDate" class="thumbnail">
-                                            <img src="images/campaigns/calendar.jpg" alt="ByDate" style="width: 100%; height: 350px;  !important;" >
+                                            <img src=" {{ asset('images/campaigns/calendar.jpg') }} " alt="ByDate" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
                                                 <h2>By Date</h2>
                                             </div>
@@ -69,14 +76,14 @@
                 </div>
             </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
+        </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
 
-
-
+        <div class="container-fluid">
 
             <nav aria-label="Page navigation" align="center">
                 <ul class="pagination">
@@ -98,11 +105,12 @@
                 </ul>
             </nav>
 
-            <br>
-            <br>
-            <br>
-            <br>
-
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
     </section>
 @endsection

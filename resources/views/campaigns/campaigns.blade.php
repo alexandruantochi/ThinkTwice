@@ -97,8 +97,8 @@
 
                             <div class="well">
 
-                                <a href="/campaigns/{{ $key }}" class="thumbnail">
-                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 350px;  !important;" >
+                                <a href="/campaign/{{ $key }}" class="thumbnail">
+                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 10em;  !important;" >
                                 </a>
 
                                 <div class = "caption">

@@ -48,7 +48,6 @@ body {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     margin-top: 10px;
@@ -131,5 +130,65 @@ input[type=text]:focus {
 .container-fluid {
     padding: 35px;
 }
+#linkLogo{
+color: #000;  font-style: normal;
+}
+#aboutPageContainer{
+    background-color: transparent;
+}
+#linksContainer{
+    padding: 35px;
+}
 
+.circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    line-height: 230px;
+    text-align: center;
+    background: #29001f
+}
+.col-centered{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+    background: #29001f;
+}
+.footerIcons{
+    margin-right: 60px;
+}
+.footerIcons a{
+    text-decoration: none !important;
+}
+.footerIcons a:hover{
+    text-decoration: none !important;
+    color: #be6fdc;
+}
+.footerIcons a:link{
+    color:white;
+}
+#aboutPageContainerBody{
+    background: linear-gradient(#451435,#2469d8,#2c996f,#d31f94,#897081,#bc681e);
+    background-size: 300% 300%;
+    box-sizing: border-box;
+    display: table;
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    -webkit-animation: Rainbow 25s ease infinite;
+    -moz-animation: Rainbow 25s ease infinite;
+    animation: Rainbow 25s ease infinite;
+}
+@-webkit-keyframes Rainbow {
+    0%{  background-position: 94% 0%;  }
+    50%{  background-position: 7% 100%;  }
+    100%{  background-position: 94% 0%;  }
+
+}
 

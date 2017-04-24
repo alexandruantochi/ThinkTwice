@@ -91,12 +91,24 @@
 
                 <div class="row">
 
-                    @foreach($default_campaigns as $default_campaign)
+                    @foreach($default_campaigns as $key => $value)
 
                         <div class="col-sm-12 col-md-4">
-                            <a href="/campaigns/{{ $default_campaign }}" class="thumbnail">
-                                <img src=" {{ asset('images/campaigns/' . $default_campaign . '/' . $default_campaign . '.jpg') }} " alt="{{ $default_campaign }}" style="width: 100%; height: 350px;  !important;" >
-                            </a>
+
+                            <div class="well">
+
+                                <a href="/campaigns/{{ $key }}" class="thumbnail">
+                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 350px;  !important;" >
+                                </a>
+
+                                <div class = "caption">
+                                    <h3>
+                                        {{ $value }}
+                                    </h3>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     @endforeach

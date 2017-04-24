@@ -44,7 +44,8 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
-                                    <div class="col-xs-4">
+
+                                    <div class="col-sm-12 col-md-4">
                                         <a href="/campaigns/popularity" class="thumbnail">
                                             <img src=" {{ asset('images/campaigns/popularity.jpg') }}" alt="Popularity" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
@@ -52,7 +53,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-xs-4">
+
+                                    <div class="col-sm-12 col-md-4">
                                         <a href="/campaigns/trending" class="thumbnail">
                                             <img src=" {{ asset('images/campaigns/trending.jpg') }} " alt="Trending" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
@@ -61,7 +63,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="col-xs-4">
+                                    <div class="col-sm-12 col-md-4">
                                         <a href="/campaigns/byDate" class="thumbnail">
                                             <img src=" {{ asset('images/campaigns/calendar.jpg') }} " alt="ByDate" style="width: 100%; height: 350px;  !important;" >
                                             <div class="carousel-caption">
@@ -85,6 +87,25 @@
 
         <div class="container-fluid">
 
+            <div class="container" align="center">
+
+                <div class="row">
+
+                    @foreach($default_campaigns as $default_campaign)
+
+                        <div class="col-sm-12 col-md-4">
+                            <a href="/campaigns/{{ $default_campaign }}" class="thumbnail">
+                                <img src=" {{ asset('images/campaigns/' . $default_campaign . '/' . $default_campaign . '.jpg') }} " alt="{{ $default_campaign }}" style="width: 100%; height: 350px;  !important;" >
+                            </a>
+                        </div>
+
+                    @endforeach
+
+                </div>
+
+            </div>
+
+            <!--
             <nav aria-label="Page navigation" align="center">
                 <ul class="pagination">
                     <li>
@@ -104,6 +125,7 @@
                     </li>
                 </ul>
             </nav>
+            -->
 
         </div>
 

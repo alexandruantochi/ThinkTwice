@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/company/{id}', 'CompanyProfileController@index');
 Route::get('/companies', 'CompanyBrowserController@index');
 
+Route::get('/campaign/{id}', 'CampaignProfileController@index');
 Route::get('/campaigns', 'CampaignsController@index');
 
 Route::get('/home', 'MainPageController@home');

@@ -17,6 +17,7 @@ Route::get('/', function () {
 //Alexandru Antochi
 Route::get('/company/{id}', 'CompanyProfileController@index');
 Route::get('/companies', 'CompanyBrowserController@index');
+Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
 Route::post('/contact','ContactController@submit');
 

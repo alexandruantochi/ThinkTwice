@@ -3,6 +3,6 @@
 @section('content')
 
 
-    @include('ResultG')
+    @include('layouts.browser',['entityType'=>'companies'])
 
 @endsection

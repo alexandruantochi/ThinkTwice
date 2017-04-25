@@ -91,7 +91,14 @@
 
             <div class="container" align="center" style="padding-bottom: 5em">
 
+                @php ($counter = 0)
+                @php ($perRow = 3)
+
                 @foreach($default_campaigns as $key => $value)
+
+                    @if ($counter % $perRow == 0)
+                        <div class="row">
+                    @endif
 
                     <div class="col-sm-12 col-md-4">
                         <div class="well">
@@ -106,6 +113,12 @@
                             </div>
                         </div>
                     </div>
+
+                    @if (($counter + 1) % $perRow == 0)
+                        </div>
+                    @endif
+
+                    @php ($counter = $counter + 1)
 
                 @endforeach
 

@@ -91,7 +91,7 @@
 
             <div class="container" align="center" style="padding-bottom: 5em">
 
-                @include('layouts.ResultsGrid', array('perRow' => 3, 'type1' => "campaign", 'type2' => "campaigns", 'default_results' => $default_campaigns));
+                @include('layouts.ResultsGrid', array('typeProfile' => "campaign", 'type' => "campaigns", 'defaultResults' => $default_campaigns));
 
             </div>
 

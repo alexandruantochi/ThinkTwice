@@ -1,16 +1,16 @@
 @php ($counter = 0)
 
-@foreach($default_results as $key => $value)
+@foreach($defaultResults as $key => $value)
 
-    @if ($counter % $perRow == 0)
+    @if ($counter % 3 == 0)
         <div class="row">
             @endif
 
             <div class="col-sm-12 col-md-4">
                 <div class="well">
                     <div class="card" style="width: 20rem;">
-                        <a href="/{{$type1}}/{{ $key }}" class="thumbnail">
-                            <img class="card-img-top" src=" {{ asset('images/' . $type2 . '/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
+                        <a href="/{{$typeProfile}}/{{ $key }}" class="thumbnail">
+                            <img class="card-img-top" src=" {{ asset('images/' . $type . '/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
                         </a>
                         <div class="card-block" style="height:8em">
                             <h4 class="card-title"> {{$value[0]}} </h4>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            @if (($counter + 1) % $perRow == 0)
+            @if (($counter + 1) % 3 == 0)
         </div>
     @endif
 

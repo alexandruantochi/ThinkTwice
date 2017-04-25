@@ -16,13 +16,13 @@
 
                 <h1>Campaigns</h1>
 
-                <a href="/campaign/create">
+                <form action="campaigns.campaignCreate">
 
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <button type="button" value="submit" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Campaign!
                     </button>
 
-                </a>
+                </form>
 
                 <br>
                 <br>

@@ -5,15 +5,15 @@
     <div class="row" style="margin-top: 15%">
 
         <aside class="col-md-3">
-            <img src="{{ asset('images/'.$entityType.'/'.$entity->id.'/logo.jpg') }}"
+            <img src="{{ asset('images/'.$entityType.'/'.$entity["id"].'/'.$entity["id"].'.jpg') }}"
                  alt="{{ asset('images/errors/notfound.jpg') }}" style="width: 100%"/>
-            <a href="/addFav?type={{$entityType}}&id={{$entity->id}}">
+            <a href="/addFav?type={{$entityType}}&id={{$entity["id"]}}">
                 <button class="btn btn-success" style="margin-top: 1em; width:100%"><span
                             class="glyphicon glyphicon-heart"/>
                     Favorite
                 </button>
             </a>
-            <a href="/blacklist?type={{$entityType}}&id={{$entity->id}}">
+            <a href="/blacklist?type={{$entityType}}&id={{$entity["id"]}}">
                 <button class="btn btn-danger" style="margin-top: 1em; width:100%"><span
                             class="glyphicon glyphicon-ban-circle"/> Blacklist
                 </button>
@@ -23,8 +23,8 @@
         <div class="col-md-9">
             <div class="row">
                 <details>
-                    <summary>{{$entity->name}} description</summary>
-                    <p>{{$entity->description}}</p>
+                    <summary>{{$entity['name']}} description</summary>
+                    <p>{{$entity['description']}}</p>
                 </details>
             </div>
 
@@ -56,6 +56,26 @@
 
             @if($entityType == 'campaigns')
 
+                <div class="row" style="background: slategrey; border-style: solid; border-radius: 25px; padding: 1%">
+                    <p>Creator: {{$entity['creator']}}</p>
+                    <p>Rating: {{$entity['rating']}}</p>
+                </div>
+
+                <div class="row form-inline" style="margin-top: 1%;" >
+                    <form action="/product" method="GET">
+
+                        <select name="productID" class="form-control " style="color:black; width: 50%">
+                            <option disabled selected value>Opposing companies</option>
+                            @foreach ($entity['companies'] as $company)
+                                <option value="{{$company}}">
+                                    {{ $company }}
+                                </option>
+                            @endforeach
+
+                        </select>
+                        <button type="submit" class="btn btn-info">Go</button>
+                    </form>
+                </div>
 
             @endif
         </div>

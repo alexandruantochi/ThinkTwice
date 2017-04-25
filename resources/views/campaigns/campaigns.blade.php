@@ -12,17 +12,11 @@
                 <br>
                 <br>
 
-                <h1>
-                    Campaigns
 
-                    <a href="/campaign/create">
 
-                        <button type="button" class="btn btn-default btn-lg">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Campaign!
-                        </button>
+                <h1>Campaigns</h1>
 
-                    </a>
-                </h1>
+
 
                 <br>
                 <br>

@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('content')
 
+
+
     <section id="search_jumbotron">
 
         <article class="container-fluid">
@@ -10,7 +12,17 @@
                 <br>
                 <br>
 
-                <h1>Campaigns</h1>
+                <h1>
+                    Campaigns
+
+                    <a href="/campaign/create">
+
+                        <button type="button" class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Campaign!
+                        </button>
+
+                    </a>
+                </h1>
 
                 <br>
                 <br>

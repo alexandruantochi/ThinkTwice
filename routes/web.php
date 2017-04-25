@@ -23,6 +23,7 @@ Route::post('/contact','ContactController@submit');
 //Ionut Arhire
 Route::get('/campaign/{id}', 'CampaignProfileController@index');
 Route::get('/campaigns', 'CampaignsController@index');
+Route::get('/campaign/create', 'CampaignCreateController@index');
 
 Route::get('/campaign/popularity', 'CampaignsPopularityController@index');
 Route::get('/campaign/trending', 'CampaignsTrendingController@index');

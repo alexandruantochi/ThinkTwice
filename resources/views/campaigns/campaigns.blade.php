@@ -16,7 +16,13 @@
 
                 <h1>Campaigns</h1>
 
+                <a href="/campaign/create">
 
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Campaign!
+                    </button>
+
+                </a>
 
                 <br>
                 <br>
@@ -97,7 +103,29 @@
 
             <div class="container" align="center" style="padding-bottom: 5em">
 
-                @include('layouts.ResultsGrid', array('typeProfile' => "campaign", 'type' => "campaigns", 'entity' => $default_campaigns));
+                <div class="row">
+
+                    @foreach($default_campaigns as $campaign)
+
+                        <div class="col-sm-12 col-md-4">
+                            <div class="well">
+
+                                <div class="card">
+                                    <a href="/campaign/{{$campaign['id']}}">
+                                        <img class="card-img-top" src="/images/campaigns/{{$campaign['id']}}/{{$campaign['id']}}.jpg" alt="Card image cap" style="width: 100%; height: 350px;  !important;">
+                                        <div class="card-block">
+                                            <h2 class="card-title">{{$campaign['name']}}</h2>
+                                            <p class="card-text">{{$campaign['description']}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    @endforeach
+
+                </div>
 
             </div>
 

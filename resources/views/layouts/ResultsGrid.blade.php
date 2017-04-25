@@ -1,6 +1,6 @@
 @php ($counter = 0)
 
-@foreach($defaultResults as $key => $value)
+@foreach($entity as $value)
 
     @if ($counter % 3 == 0)
         <div class="row">
@@ -9,12 +9,12 @@
             <div class="col-sm-12 col-md-4">
                 <div class="well">
                     <div class="card" style="width: 20rem;">
-                        <a href="/{{$entityProfile}}/{{ $key }}" class="thumbnail">
-                            <img class="card-img-top" src=" {{ asset('images/' . $entity . '/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
+                        <a href="/{{$typeProfile}}/{{ $value['id'] }}" class="thumbnail">
+                            <img class="card-img-top" src=" {{ asset('images/' . $type . '/' . $value['id'] . '/' . $value['id'] . '.jpg') }} " alt="{{ $value['id'] }}" style="width: 100%; height: 15em;  !important;" >
                         </a>
                         <div class="card-block" style="height:8em">
-                            <h4 class="card-title"> {{$value[0]}} </h4>
-                            <p class="card-text">{{$value[1]}}</p>
+                            <h4 class="card-title"> {{$value['name']}} </h4>
+                            <p class="card-text">{{$value['description']}}</p>
                         </div>
                     </div>
                 </div>

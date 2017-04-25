@@ -3,7 +3,7 @@
 
     <section id="search_jumbotron">
 
-        <div class="container-fluid">
+        <article class="container-fluid">
 
             <div class="jumbotron text-center" >
 
@@ -18,7 +18,7 @@
                 <form class="form-inline" method="get" action="/campaigns/search">
                     <div class="input-group">
                         <input type="text" class="form-control" size="70" aria-label="...">
-                        <div class="input-group-btn">
+                        <nav class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type<span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a href="#">Campaign Name</a></li>
@@ -26,7 +26,7 @@
                                 <li><a href="#">Supporting Company</a></li>
                                 <li><a href="#">Opposing Company</a></li>
                             </ul>
-                        </div><!-- /btn-group -->
+                        </nav><!-- /btn-group -->
                         <div class="input-group-btn">
                             <button type="button" class=" btn btn-danger">Search</button>
                         </div>
@@ -34,7 +34,7 @@
                 </form>
             </div>
 
-        </div>
+        </article>
 
         <main class="container-fluid">
 

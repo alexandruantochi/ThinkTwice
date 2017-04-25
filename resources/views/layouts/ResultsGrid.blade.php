@@ -9,8 +9,8 @@
             <div class="col-sm-12 col-md-4">
                 <div class="well">
                     <div class="card" style="width: 20rem;">
-                        <a href="/{{$typeProfile}}/{{ $key }}" class="thumbnail">
-                            <img class="card-img-top" src=" {{ asset('images/' . $type . '/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
+                        <a href="/{{$entityProfile}}/{{ $key }}" class="thumbnail">
+                            <img class="card-img-top" src=" {{ asset('images/' . $entity . '/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
                         </a>
                         <div class="card-block" style="height:8em">
                             <h4 class="card-title"> {{$value[0]}} </h4>

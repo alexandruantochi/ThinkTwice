@@ -18,6 +18,7 @@
                 <form class="form-inline" method="get" action="/campaigns/search">
                     <div class="input-group">
                         <input type="text" class="form-control" size="70" aria-label="...">
+
                         <nav class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type<span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -26,11 +27,12 @@
                                 <li><a href="#">Supporting Company</a></li>
                                 <li><a href="#">Opposing Company</a></li>
                             </ul>
-                        </nav><!-- /btn-group -->
+                        </nav>
+
                         <div class="input-group-btn">
                             <button type="button" class=" btn btn-danger">Search</button>
                         </div>
-                    </div><!-- /input-group -->
+                    </div>
                 </form>
             </div>
 
@@ -87,36 +89,49 @@
 
         <nav class="container-fluid">
 
-            <div class="container" align="center">
+            <div class="container" align="center" style="padding-bottom: 5em">
 
-                <div class="row">
+                @php ($counter = 0)
+                @php ($perRow = 3)
 
-                    @foreach($default_campaigns as $key => $value)
+                @foreach($default_campaigns as $key => $value)
 
-                        <div class="col-sm-12 col-md-4">
+                    @if ($counter % $perRow == 0)
+                        <div class="row">
+                    @endif
 
-                            <div class="well">
-
+                    <div class="col-sm-12 col-md-4">
+                        <div class="well">
+                            <div class="card" style="width: 20rem;">
                                 <a href="/campaign/{{ $key }}" class="thumbnail">
-                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
+                                    <img class="card-img-top" src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
                                 </a>
-
-                                <div class = "caption">
-                                    <h3>
-                                        {{ $value }}
-                                    </h3>
+                                <div class="card-block" style="height:8em">
+                                    <h4 class="card-title"> {{$value[0]}} </h4>
+                                    <p class="card-text">{{$value[1]}}</p>
                                 </div>
-
                             </div>
-
                         </div>
+                    </div>
 
-                    @endforeach
+                    @if (($counter + 1) % $perRow == 0)
+                        </div>
+                    @endif
 
+                    @php ($counter = $counter + 1)
 
+                @endforeach
 
-                </div>
+            </div>
 
+            <div align="center">
+                <a href="/campaigns">
+
+                    <button type="button" class="btn btn-success">
+                        Give me other random results!
+                    </button>
+
+                </a>
             </div>
 
         </nav>

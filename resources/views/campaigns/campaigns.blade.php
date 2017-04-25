@@ -36,7 +36,7 @@
 
         </div>
 
-        <div class="container-fluid">
+        <main class="container-fluid">
 
             <div class="row">
                 <div class="col-xs-12">
@@ -78,14 +78,14 @@
                 </div>
             </div>
 
-        </div>
+        </main>
 
         <br>
         <br>
         <br>
         <br>
 
-        <div class="container-fluid">
+        <nav class="container-fluid">
 
             <div class="container" align="center">
 
@@ -98,7 +98,7 @@
                             <div class="well">
 
                                 <a href="/campaign/{{ $key }}" class="thumbnail">
-                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 10em;  !important;" >
+                                    <img src=" {{ asset('images/campaigns/' . $key . '/' . $key . '.jpg') }} " alt="{{ $key }}" style="width: 100%; height: 15em;  !important;" >
                                 </a>
 
                                 <div class = "caption">
@@ -113,33 +113,13 @@
 
                     @endforeach
 
+
+
                 </div>
 
             </div>
 
-            <!--
-            <nav aria-label="Page navigation" align="center">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            -->
-
-        </div>
+        </nav>
 
         <br>
         <br>

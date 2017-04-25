@@ -14,10 +14,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Alexandru Antochi
 Route::get('/company/{id}', 'CompanyProfileController@index');
 Route::get('/companies', 'CompanyBrowserController@index');
+Route::get('/contact','ContactController@index');
+Route::post('/contact','ContactController@submit');
 
+//Ionut Arhire
 Route::get('/campaign/{id}', 'CampaignProfileController@index');
 Route::get('/campaigns', 'CampaignsController@index');
 
@@ -25,6 +28,10 @@ Route::get('/campaign/popularity', 'CampaignsPopularityController@index');
 Route::get('/campaign/trending', 'CampaignsTrendingController@index');
 Route::get('/campaign/byDate', 'CampaignsByDateController@index');
 
+
+//Alexandru Poputoaia
 Route::get('/home', 'MainPageController@home');
 Route::get('/products', 'ProductsController@products');
+
+
 

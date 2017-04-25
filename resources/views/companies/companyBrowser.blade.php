@@ -2,5 +2,7 @@
 
 @section('content')
 
-<p> {{ $companies }}</p>
+
+    @include('ResultG')
+
 @endsection

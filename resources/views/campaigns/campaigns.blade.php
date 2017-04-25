@@ -91,9 +91,11 @@
 
             <div class="container" align="center" style="padding-bottom: 5em">
 
-                @include('layouts.ResultsGrid', array('entityProfile' => "campaign", 'entity' => "campaigns", 'defaultResults' => $default_campaigns));
+                @include('layouts.ResultsGrid', array('typeProfile' => "campaign", 'type' => "campaigns", 'entity' => $default_campaigns));
 
             </div>
+
+
 
             <div align="center">
                 <a href="/campaigns">

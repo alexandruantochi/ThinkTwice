@@ -26,9 +26,9 @@ Route::get('/campaign/{id}', 'CampaignProfileController@index');
 Route::get('/campaigns', 'CampaignsController@index');
 Route::get('/campaign/create', 'CampaignCreateController@index');
 
-Route::get('/campaign/popularity', 'CampaignsPopularityController@index');
-Route::get('/campaign/trending', 'CampaignsTrendingController@index');
-Route::get('/campaign/byDate', 'CampaignsByDateController@index');
+Route::get('/campaigns/popularity', 'CampaignsPopularityController@index');
+Route::get('/campaigns/trending', 'CampaignsPopularityController@index');
+Route::get('/campaigns/byDate', 'CampaignsPopularityController@index');
 
 
 //Alexandru Poputoaia

@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-
+<div class="container">
     <section id="search_jumbotron">
 
         <form method="POST" action="contact">
-            <div class="col-sm-6" style="margin-top: 10%; color:white;">
+            <div class="col-sm-6" style="margin-top: 10%;">
                 <input type="hidden" name="_token" value="UKrzBcHhXyiIal3BtPMhydW4uNSc9MhydEewNyLN">
                 <div class="form-group">
                     <label for="name">New name</label>
@@ -35,7 +35,7 @@
                 <button type="submit" class="btn btn-danger">Cancel</button>
             </div>
 
-            <div class="col-sm-6" style="margin-top: 10%; color:white;">
+            <div class="col-sm-6" style="margin-top: 10%;">
                 <div class="form-group">
                     <label for="surname">Surname</label>
                     <input type="surname" class="form-control" id="surname" aria-describedby="description" placeholder="Enter a new surname">
@@ -66,4 +66,6 @@
         </form>
 
     </section>
+
+</div>
 @endsection

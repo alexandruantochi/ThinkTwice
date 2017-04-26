@@ -27,17 +27,17 @@
             </div>
         </div>
         <div class="col-md-3 text-center" id="linksContainer">
-            <a href="home">
+            <a href="/home">
                 <div class="circle pull-left">
                         Home
                 </div>
             </a>
-            <a href="#">
+            <a href="/login">
                 <div class="circle pull-right">
                     Log In
                 </div>
             </a>
-            <a href="#">
+            <a href="/register">
                 <div class="circle pull-left">
                     Sign Up
                 </div>

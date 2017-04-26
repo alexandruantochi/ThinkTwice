@@ -1,26 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-    <section id="search_jumbotron">
-        <head>
-            <title>Bootstrap Example</title>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style>
-                /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-                .row.content {height: 550px}
-
-                .sidenav {
-                    height: 100%;
-                }
-
-                /* On small screens, set height to 'auto' for the grid */
-                @media screen and (max-width: 767px) {
-                    .row.content {height: auto;}
-                }
-            </style>
-        </head>
-        <body>
+<div class="container" style="margin-top:10%;">
 
         <nav class="navbar navbar-inverse visible-xs">
             <div class="container-fluid">
@@ -118,7 +99,7 @@
 
                     <div class="col-sm-4 sidenav">
                         <button type="button" class="btn btn-primary btn-danger btn-block">Log out</button>
-                        <button type="button" class="btn btn-primary btn-block" >Edit contact</button>
+                        <a href="/profile/edit"><button type="button" class="btn btn-primary btn-block" >Edit contact</button></a>
                         <br>
                     </div>
                     <div class="col-sm-4">
@@ -170,8 +151,8 @@
             </div>
         </div>
 
-        </body>
 
 
-    </section>
+</div>
+
 @endsection

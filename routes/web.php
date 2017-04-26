@@ -14,6 +14,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Auth::routes();
+
 //Alexandru Antochi
 Route::get('/company/{id}', 'CompanyProfileController@index');
 Route::get('/companies', 'CompanyBrowserController@index');
@@ -40,3 +43,7 @@ Route::get('/profile/edit','EditformController@editprofile');
 Route::get('/auth/login','LoginuserController@show');
 Route::get('/auth/register','RegisteruserController@show');
 
+
+
+
+Route::get('/home', 'HomeController@index');

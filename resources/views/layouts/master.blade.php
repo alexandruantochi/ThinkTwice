@@ -27,7 +27,7 @@
                 <li><a href="/campaigns">Campaigns</a></li>
                 <li><a href="/companies">Companies</a></li>
                 <li><a href="/products">Products</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="/profile">Profile</a></li>
                 <li>
                     <form style="margin-top: 13px;">
                         <input type="text" name="search" placeholder="Search..">

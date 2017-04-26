@@ -34,5 +34,9 @@ Route::get('/campaign/byDate', 'CampaignsByDateController@index');
 Route::get('/home', 'MainPageController@home');
 Route::get('/products', 'ProductsController@products');
 
-
+//Silitra Dragos
+Route::get('/profile','ProfileController@showprofile');
+Route::get('/profile/edit','EditformController@editprofile');
+Route::get('/auth/login','LoginuserController@show');
+Route::get('/auth/register','RegisteruserController@show');
 

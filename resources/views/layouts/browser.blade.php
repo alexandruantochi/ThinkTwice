@@ -26,7 +26,7 @@
                              alt="{{asset('images/errors/error.jpg')}}" style="width:100%;">
                         <div class="card-block">
                             <h4 class="card-title" style="color:red;">{{ $entity->name }}</h4>
-                            <details style="color:white;">
+                            <details style="...">
                                 <summary>Description</summary>
                             <p class="card-text">{{$entity->description}}</p>
                             </details>

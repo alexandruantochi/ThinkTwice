@@ -35,7 +35,7 @@ Route::get('/campaign/byDate', 'CampaignsByDateController@index');
 
 //Alexandru Poputoaia
 Route::get('/home', 'MainPageController@home');
-Route::get('/products', 'ProductsController@products');
+Route::get('/products', 'ProductsController@index');
 
 //Silitra Dragos
 Route::get('/profile','ProfileController@showprofile');

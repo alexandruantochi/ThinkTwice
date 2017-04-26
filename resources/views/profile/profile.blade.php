@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="col-sm-4 sidenav">
-                        <button type="button" class="btn btn-primary btn-danger btn-block">Log out</button>
+                       <a href="/home"><button type="button" class="btn btn-primary btn-danger btn-block">Log out</button></a>
                         <a href="/profile/edit"><button type="button" class="btn btn-primary btn-block" >Edit contact</button></a>
                         <br>
                     </div>

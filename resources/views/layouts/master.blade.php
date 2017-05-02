@@ -5,60 +5,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{{asset('js/temp/jquery.min.js')}}"></script>
-    <script src="{{asset('js/temp/bootstrap.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('css/temp/bootstrap.css')}}"/>
-
-
+    <script src="{{asset('js/bootstrap-4/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/bootstrap-4/bootstrap.min.css')}}"/>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse  bg-inverse">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <a class="navbar-brand" href="/home">ThinkTwice</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/campaigns">Campaigns</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/companies">Companies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-danger my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Search
             </button>
-            <a class="navbar-brand" href="home">Think Twice</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/campaigns">Campaigns</a></li>
-                <li><a href="/companies">Companies</a></li>
-                <li><a href="/products">Products</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li>
-                    <form style="margin-top: 13px;">
-                        <input type="text" name="search" placeholder="Search..">
-                    </form>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <button class="btn  btn btn-danger" type="button" id="dropdownsearchMenu" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="true" style="margin-top: 10px;">
-                            Options
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownsearchMenu">
-                            <li><a href="#">UPC</a></li>
-                            <li><a href="#">Product name</a></li>
-                            <li><a href="#">Campaign name</a></li>
-                            <li><a href="#">Companie name</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">UPC</a>
+                <a class="dropdown-item" href="#">Product name</a>
+                <a class="dropdown-item" href="#">Campaign name</a>
+                <a class="dropdown-item" href="#">Companie name</a>
+            </div>
+        </form>
     </div>
 </nav>
+<br>
+<br>
+
 @yield('content')
-<footer class="footer">
-    <div class="container">
-        <h3>
-            Follow us: <span class="glyphicon glyphicon-user" style="color: #000"> <a href="#">Facebook </a></span>
+
+
+<br>
+<br>
+<footer class="text-center" style="display: block;background-color:#333136; padding-bottom: 2em; margin-right: -1em">
+    <br>
+        <h3 style="color: white">
+            Follow us:  <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Facebook</button>
+                        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Instagram</button>
+                        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Twiter</button>
         </h3>
-    </div>
 </footer>
 </body>
 </html>

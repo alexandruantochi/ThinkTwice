@@ -1,28 +1,22 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="jumbotron text-center">
-            <h1>Think Twice</h1>
-            <p>Spend Your Money Wisely</p>
-            <form class="form-inline">
-                <div class="input-group">
-                    <input type="text" class="form-control" size="50" placeholder="Product Name" required>
-                    <div class="input-group-btn">
-                        <button type="button" class=" btn btn-danger">Search</button>
-                    </div>
-                </div>
-            </form>
+<div class="jumbotron  jumbotron-fluid text-center">
+    <h1>Think Twice</h1>
+    <p>Spend Your Money Wisely</p>
+        <div class="input-group" style="margin-left: 35%; width: 35%">
+            <input type="text" class="form-control" placeholder="Product Name" aria-describedby="basic-addon2">
+            <div class="input-group-btn" style="">
+                <button type="button" class=" btn btn-outline-danger">Search</button>
+            </div>
         </div>
-    </div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading text-center">
     <h3 class="panel-title">Popular Campaigns</h3>
 </div>
-    <div class="panel-body">
+    <div class="panel-body" style="background-color: #d6dbdc; margin: 1em; padding-top: 1em;padding-bottom: 1em;">
         <div class="col-md-12">
             <div class="row text-center">
                 <div class="col-md-4 text-center">
@@ -68,10 +62,13 @@
 </div>
 
 <div class="panel panel-default">
+    <br>
+    <br>
 <div class="panel-heading text-center">
     <h3 class="panel-title">Top Worst Companies</h3>
 </div>
-<div class="panel-body">
+<div class="panel-body" style="background-color: #d6dbdc; margin: 1em; padding-top: 1em;padding-bottom: 1em;">
+
     <div class="col-md-12">
         <div class="row text-center">
             <div class="col-md-3 text-center">
@@ -127,5 +124,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

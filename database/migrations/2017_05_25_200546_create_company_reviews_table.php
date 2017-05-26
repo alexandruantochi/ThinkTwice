@@ -15,12 +15,13 @@ class CreateCompanyReviewsTable extends Migration
     {
         Schema::create('companyreviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id');
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('company_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->longText('review');
             $table->timestamps();
+
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

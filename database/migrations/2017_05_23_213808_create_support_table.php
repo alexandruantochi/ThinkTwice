@@ -18,10 +18,11 @@ class CreateSupportTable extends Migration
             $table->integer('campaign_id')->unsigned();
             $table->integer('company_id')->unsigned();
             $table->boolean('supports');
+            $table->timestamps();
 
             //cheii straine care referentiaza tabelele companies si campaigns
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 

@@ -19,8 +19,8 @@ class CreateSponsorsTable extends Migration
             $table->integer('company_id')->unsigned();
 
             //cheii straine care referentiaza tabelele companies si campaigns
-            $table->foreign('company_id')->references('id')->on('companies');
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
         });
     }
 

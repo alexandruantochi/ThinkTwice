@@ -19,11 +19,10 @@ class CreateProductsReviewsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('product_rating');
             $table->longText('review');
-            $table->boolean('substance_ok');
-
+            $table->timestamps();
             //cheii straine care referentiaza tabelele products si users
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

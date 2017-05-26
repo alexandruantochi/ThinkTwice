@@ -19,7 +19,7 @@ class CreateActivityTable extends Migration
             $table->string('action_detail');
             $table->timestamps();
             //user_id va fi o cheie straina care referentiaza tabela users
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

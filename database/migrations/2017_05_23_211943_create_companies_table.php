@@ -22,6 +22,7 @@ class CreateCompaniesTable extends Migration
             $table->float('rating',3,2);
             $table->integer('raters');
             $table->integer('faved');
+            $table->integer('parent');
             $table->timestamps();
         });
     }

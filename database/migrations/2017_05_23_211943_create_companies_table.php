@@ -15,8 +15,7 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('name');
-            $table->unique('name');
+            $table->string('name')->unique();
             $table->longText('description');
             $table->string('contact');
             $table->float('rating',3,2);

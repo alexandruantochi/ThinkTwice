@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->longText('description');
             $table->integer('price');
             $table->integer('UPC');
-            $table->integer('image_path');
+            $table->timestamps();
             //index
             $table->index('UPC', 'product_UPC_index');
         });

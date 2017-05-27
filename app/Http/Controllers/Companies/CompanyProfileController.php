@@ -9,7 +9,7 @@ use App\Company;
 
 class CompanyProfileController extends Controller
 {
-    public function getProfile(Request $request, $id)
+    public function viewProfile(Request $request, $id)
     {
         return Company::where('id',$id)->first();
 

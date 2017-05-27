@@ -19,7 +19,7 @@ class CampaignsPopularityController extends Controller
         $popular_campaigns = DB::table(DB::raw("({$subQuery->toSql()}) as subQuery"))
                                 ->mergeBindings($subQuery)
                                 ->join('campaigns', 'campaigns.id', '=', 'subQuery.id')
-                                ->get();
+                                ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         return $popular_campaigns;
     }

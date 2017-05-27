@@ -20,5 +20,6 @@ class CampaignBrowserController extends Controller
 
         return $default_campaigns;
     }
+
 }
 

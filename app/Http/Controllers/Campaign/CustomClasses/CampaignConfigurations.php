@@ -10,10 +10,12 @@ namespace App\Http\Controllers\Campaign\CustomClasses;
 final class CampaignConfigurations {
 
     public $num_default_results;
+    public $num_results_page;
 
     private function __construct() {
 
         $this->num_default_results = 6;
+        $this->num_results_page = 10;
 
     }
 

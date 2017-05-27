@@ -13,7 +13,7 @@ class CreateCompanyReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('companyreviews', function (Blueprint $table) {
+        Schema::create('company_reviews', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id')->unsigned();
             $table->integer('user_id')->unsigned();
@@ -32,6 +32,6 @@ class CreateCompanyReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companyreviews');
+        Schema::dropIfExists('company_reviews');
     }
 }

@@ -28,9 +28,9 @@ Route::post('/contact','ContactController@submit');
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
-Route::get('/campaign/popularity', 'Campaign\CampaignsPopularityController@index');
-Route::get('/campaign/trending', 'Campaign\CampaignsTrendingController@index');
-Route::get('/campaign/byDate', 'Campaign\CampaignsByDateController@index');
+Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@index');
+Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
+Route::get('/campaigns/byDate', 'Campaign\CampaignsByDateController@index');
 
 
 //Alexandru Poputoaia

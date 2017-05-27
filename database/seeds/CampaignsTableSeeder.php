@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Http\Controllers\Campaign\CustomClasses\SeederHelper;
+use App\Http\Controllers\Campaign\CustomClasses\TimePeriods;
 
 class CampaignsTableSeeder extends Seeder
 {
@@ -97,6 +99,10 @@ class CampaignsTableSeeder extends Seeder
             )
         );
 
+        SeederHelper::randomize_dates($campaigns, TimePeriods::week, TimePeriods::week);
+
         DB::table('campaigns')->insert($campaigns);
     }
+
+
 }

@@ -31,6 +31,17 @@ final class CampaignConfigurations {
 
     }
 
+    public static function generate_random_timestamp() {
+
+        $max = time();
+        $min = $max - 604800; //604800 means 1 week
+
+        $result = mt_rand($min, $max);
+
+        return $result;
+
+    }
+
 }
 
 ?>

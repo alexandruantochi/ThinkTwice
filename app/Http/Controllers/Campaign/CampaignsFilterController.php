@@ -20,4 +20,15 @@ class CampaignsFilterController extends Controller
         return $results;
 
     }
+
+    function byCategory(Request $request) {
+
+        $results = DB::table('campaigns')
+                        ->where('category', 'like', "%{$request->get('category')}%")
+                        ->orderBy('name', 'desc')
+                        ->get();
+
+        return $results;
+
+    }
 }

@@ -30,6 +30,7 @@ Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
 Route::get('/campaigns/byDate', 'Campaign\CampaignsByDateController@index');
 
 Route::get('/campaigns/byName', 'Campaign\CampaignsFilterController@byName');
+Route::get('/campaigns/byCategory', 'Campaign\CampaignsFilterController@byCategory');
 
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');

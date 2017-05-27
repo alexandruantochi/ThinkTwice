@@ -20,6 +20,9 @@ class CreateCampaignsTable extends Migration
             $table->string('category');
             $table->integer('organizer_id')->unsigned();
             $table->timestamps();
+
+            //cheie straina care referentiaza tabela users
+            $table->foreign('organizer_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

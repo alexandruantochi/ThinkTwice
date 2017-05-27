@@ -19,6 +19,8 @@ class CreateSupportTable extends Migration
             $table->increments('id')->unique();
             $table->integer('campaign_id')->unsigned();
             $table->integer('company_id')->unsigned();
+            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }

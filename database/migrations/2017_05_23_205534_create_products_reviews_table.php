@@ -20,6 +20,9 @@ class CreateProductsReviewsTable extends Migration
             $table->integer('product_rating');
             $table->longText('review');
             $table->timestamps();
+            //cheii straine care referentiaza tabelele products si users
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

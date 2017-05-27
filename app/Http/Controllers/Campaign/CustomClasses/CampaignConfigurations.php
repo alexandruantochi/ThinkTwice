@@ -31,17 +31,6 @@ final class CampaignConfigurations {
 
     }
 
-    public static function generate_random_timestamp($offset1, $offset2) {
-
-        $max = time() - $offset1;
-        $min = $max - $offset2;
-
-        $result = mt_rand($min, $max);
-
-        return $result;
-
-    }
-
 }
 
 ?>

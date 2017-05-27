@@ -31,10 +31,10 @@ final class CampaignConfigurations {
 
     }
 
-    public static function generate_random_timestamp() {
+    public static function generate_random_timestamp($offset1, $offset2) {
 
-        $max = time();
-        $min = $max - 604800; //604800 means 1 week
+        $max = time() - $offset1;
+        $min = $max - $offset2;
 
         $result = mt_rand($min, $max);
 

@@ -19,9 +19,6 @@ class CreateCompanyReviewsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->longText('review');
             $table->timestamps();
-
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

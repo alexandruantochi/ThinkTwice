@@ -17,8 +17,6 @@ class CreateCompanyCampaignsLink extends Migration
             $table->increments('id');
             $table->integer('company_id');
             $table->integer('campaign_id');
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
             $table->timestamps();
         });
     }

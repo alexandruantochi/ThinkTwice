@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CampaignsController extends Controller
+class CampaignBrowserController extends Controller
 {
     function index(){
 

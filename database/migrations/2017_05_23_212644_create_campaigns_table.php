@@ -15,7 +15,7 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->longText('description');
             $table->string('category');
             $table->integer('organizer_id')->unsigned();

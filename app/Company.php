@@ -20,10 +20,16 @@ class Company extends Model
         return $this->hasMany('App\Review');
     }
 
-    public function campaigns()
+    public function sup_campaigns()
     {
-        return $this->belongsToMany('App\Role', 'comp_camp', 'company_id', 'campaign_id');
+        return $this->belongsToMany('App\Campaign', 'sup_campaigns', 'company_id', 'campaign_id');
     }
+
+    public function agn_campaigns()
+    {
+        return $this->belongsToMany('App\Campaign', 'agn_campaigns', 'company_id', 'campaign_id');
+    }
+
 
 
 }

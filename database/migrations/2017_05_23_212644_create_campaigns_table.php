@@ -18,7 +18,6 @@ class CreateCampaignsTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('category');
-            $table->integer('sponsor_id');
             $table->integer('organizer_id')->unsigned();
             $table->timestamps();
 

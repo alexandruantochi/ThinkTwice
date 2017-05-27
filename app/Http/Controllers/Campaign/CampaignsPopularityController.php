@@ -10,17 +10,20 @@ use Illuminate\Support\Facades\DB;
 class CampaignsPopularityController extends Controller
 {
     function index() {
+
         $subQuery = DB::table('campaign_subs')
-                            ->join('campaigns', 'campaigns.id', '=', 'campaign_subs.campaign_id')
-                            ->groupBy('campaigns.id')
+                            ->groupBy('campaign_id')
                             ->orderBy('count', 'desc')
-                            ->selectRaw('count(*) count, campaigns.id');
+                            ->selectRaw('count(*) count, campaign_id');
 
         $popular_campaigns = DB::table(DB::raw("({$subQuery->toSql()}) as subQuery"))
                                 ->mergeBindings($subQuery)
-                                ->join('campaigns', 'campaigns.id', '=', 'subQuery.id')
+                                ->join('campaigns', 'campaigns.id', '=', 'subQuery.campaign_id')
+                                ->orderBy('subQuery.count', 'desc')
+                                ->selectRaw('subQuery.count, campaigns.*')
                                 ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         return $popular_campaigns;
+
     }
 }

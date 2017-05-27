@@ -19,6 +19,7 @@ class CampaignBrowserController extends Controller
         //return view('campaigns.campaigns')->with('default_campaigns', $default_campaigns);
 
         return $default_campaigns;
+
     }
 
 }

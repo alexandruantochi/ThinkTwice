@@ -14,7 +14,6 @@ class CampaignBrowserController extends Controller
         $default_campaigns = DB::table('campaigns')
             ->inRandomOrder()
             ->take(CampaignConfigurations::get_Instance()->num_default_results)
-            ->select('id')
             ->get();
 
         //return view('campaigns.campaigns')->with('default_campaigns', $default_campaigns);

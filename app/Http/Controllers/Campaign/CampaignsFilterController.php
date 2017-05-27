@@ -31,4 +31,18 @@ class CampaignsFilterController extends Controller
         return $results;
 
     }
+
+    function byOrganizer(Request $request) {
+
+        $results = DB::table('users')
+                            ->where('users.name', 'like', "%{$request->get('organizer')}%")
+                            ->join('campaigns', 'campaigns.organizer_id', '=', 'users.id')
+                            ->orderBy('organizer_name', 'asc')
+                            ->selectRaw('users.name organizer_name, campaigns.*')
+                            ->get();
+
+        return $results;
+
+    }
+
 }

@@ -18,8 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 //Alexandru Antochi
-Route::get('/company/{id}', 'CompanyProfileController@index');
-Route::get('/companies', 'CompanyBrowserController@index');
+Route::get('/company/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('/companies/browse', 'Companies\CompanyBrowserController@browseCompanies');
+//
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
 Route::post('/contact','ContactController@submit');

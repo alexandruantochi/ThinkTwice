@@ -29,6 +29,8 @@ Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@inde
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
 Route::get('/campaigns/byDate', 'Campaign\CampaignsByDateController@index');
 
+Route::get('/campaigns/byName', 'Campaign\CampaignsFilterController@byName');
+
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 

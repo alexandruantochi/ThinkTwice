@@ -14,8 +14,8 @@ class CampaignsPopularityController extends Controller
         $popular_campaigns = DB::table('campaigns')
                                     ->join('campaign_subs', 'campaigns.id', '=', 'campaign_subs.campaign_id')
                                     ->groupBy('campaigns.id')
-                                    ->selectRaw('count(*) count, campaigns.id')
                                     ->orderBy('count', 'desc')
+                                    ->selectRaw('count(*) count, campaigns.id')
                                     ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         return $popular_campaigns;

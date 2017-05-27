@@ -25,13 +25,12 @@ Route::get('/contact','ContactController@index');
 Route::post('/contact','ContactController@submit');
 
 //Ionut Arhire
-Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
-Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
-
-Route::get('/campaigns/test/popularity', 'Campaign\CampaignsPopularityController@index');
+Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@index');
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
 Route::get('/campaigns/byDate', 'Campaign\CampaignsByDateController@index');
 
+Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
+Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 //Alexandru Poputoaia
 Route::get('/home', 'MainPageController@home');

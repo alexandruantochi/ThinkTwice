@@ -15,9 +15,10 @@ class CreateCompanyCampaignsLink extends Migration
     {
         Schema::create('comp_camp', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id')->unsigned();
+            $table->integer('company_id');
+            $table->integer('campaign_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            //$table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -21,7 +21,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.82,
                 'raters'=>193,
                 'faved'=>96,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'PepsiCo',
@@ -30,7 +32,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.87,
                 'raters'=>147,
                 'faved'=>49,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Anheuser-Busch InBev',
@@ -39,7 +43,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>1.13,
                 'raters'=>177,
                 'faved'=>120,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'The Coca-Cola Company',
@@ -48,7 +54,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>4.85,
                 'raters'=>204,
                 'faved'=>77,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Mars',
@@ -57,7 +65,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.7,
                 'raters'=>172,
                 'faved'=>52,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Unilever',
@@ -66,7 +76,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.48,
                 'raters'=>244,
                 'faved'=>59,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Ferrero',
@@ -75,7 +87,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>3.82,
                 'raters'=>95,
                 'faved'=>48,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Parmalat',
@@ -84,7 +98,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>3.06,
                 'raters'=>198,
                 'faved'=>44,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Oetker Group',
@@ -93,7 +109,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.24,
                 'raters'=>125,
                 'faved'=>110,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Lipton',
@@ -102,7 +120,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>3.61,
                 'raters'=>188,
                 'faved'=>104,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Nestea',
@@ -111,7 +131,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>4.56,
                 'raters'=>244,
                 'faved'=>86,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Maggi',
@@ -120,7 +142,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>4.6,
                 'raters'=>222,
                 'faved'=>68,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Milka',
@@ -129,7 +153,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>2.01,
                 'raters'=>113,
                 'faved'=>50,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name'=>'Pringles',
@@ -138,7 +164,9 @@ class CompanyTableSeeder extends Seeder
                 'rating'=>4.4,
                 'raters'=>205,
                 'faved'=>119,
-                'parent'=>0
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             )
         );
         DB::table('companies')->insert($companies);

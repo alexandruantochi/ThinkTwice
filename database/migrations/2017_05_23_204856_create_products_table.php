@@ -18,9 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->integer('company_id');
-            $table->longText('description');
             $table->integer('price');
-            $table->integer('UPC');
+            $table->string('UPC');
             $table->timestamps();
             //index
             $table->index('UPC', 'product_UPC_index');

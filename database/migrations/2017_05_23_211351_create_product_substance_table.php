@@ -15,12 +15,11 @@ class CreateProductSubstanceTable extends Migration
     {
         Schema::create('product_substance', function (Blueprint $table) {
             $table->increments('id')->unique();
-
             $table->integer('product_id')->unsigned();
             $table->integer('substance_id')->unsigned();
             //cheii straine care referentiaza tabelele products si substances
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('substance_id')->references('id')->on('substances');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('substance_id')->references('id')->on('substances')->onDelete('cascade');
         });
     }
 

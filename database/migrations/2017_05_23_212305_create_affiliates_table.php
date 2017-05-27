@@ -19,7 +19,7 @@ class CreateAffiliatesTable extends Migration
             $table->integer('mother_company')->unsigned();
 
             //cheii straina care referentiaza tabela companies
-            $table->foreign('mother_company')->references('id')->on('companies');
+            $table->foreign('mother_company')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 

@@ -30,6 +30,6 @@ class CreateSupportTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('support');
+        Schema::dropIfExists('sup_campaigns');
     }
 }

@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\Products;
+
+
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
     public function index(){
-        $products_assosiative_array= array(
-            "food"=>"Food",
-            "beauty"=>"Beauty",
-            "personal_care"=>"Personal Care",
-            "entertainment"=>"Entertainment",
-            "clothing"=>"Clothing",
-            "electronics"=>"Electronics"
-        );
-        return view('products.products')->with('products_assosiative_array',$products_assosiative_array);
+
+        $categories=DB::table('products')->distinct()->pluck('category');
+        $products=DB::table('products')->pluck('id','name');
+        $product_price=DB::table('products')->pluck('id','price');
+
+        return view('products.products',array('categories'=>$categories,'products'=>$products,'product_price'=>$product_price));
     }
 }

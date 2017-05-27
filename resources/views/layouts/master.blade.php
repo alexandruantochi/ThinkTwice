@@ -54,13 +54,18 @@
 
 <br>
 <br>
-<footer class="text-center" style="display: block;background-color:#333136; padding-bottom: 2em; margin-right: -1em">
+<br>
+<br>
+
+
+<nav class="navbar navbar-light bg-faded text-center" style="background-color:#333136;">
     <br>
-        <h3 style="color: white">
-            Follow us:  <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Facebook</button>
-                        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Instagram</button>
-                        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Twiter</button>
-        </h3>
-</footer>
+    <h3 style="color: white">
+        Follow us:  <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Facebook</button>
+        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Instagram</button>
+        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Twiter</button>
+    </h3>
+</nav>
+
 </body>
 </html>

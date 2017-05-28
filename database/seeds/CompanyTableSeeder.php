@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Http\Controllers\Campaign\CustomClasses\SeederHelper;
+use App\Http\Controllers\Campaign\CustomClasses\TimePeriods;
 
 class CompanyTableSeeder extends Seeder
 {
@@ -205,6 +207,9 @@ class CompanyTableSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             )
         );
+
+        SeederHelper::randomize_dates($companies, TimePeriods::present, TimePeriods::week);
+
         DB::table('companies')->insert($companies);
     }
 

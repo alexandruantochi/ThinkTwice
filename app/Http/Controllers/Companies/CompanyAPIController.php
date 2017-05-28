@@ -11,7 +11,6 @@ class CompanyAPIController extends Controller
     public function main(Request $request, $companyName)
     {
 
-
         $companyName = strtolower($companyName);
         if (strlen($companyName) < 4) {
             $error['message'] = 'Please provide more than 4 characters.';

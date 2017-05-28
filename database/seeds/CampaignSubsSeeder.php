@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Campaign\CustomClasses\SeederHelper;
+use App\Http\Controllers\Campaign\CustomClasses\TimePeriods;
 
 class CampaignSubsSeeder extends Seeder
 {
@@ -12,9 +14,8 @@ class CampaignSubsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('campaign_subs')->delete();
+        /*$campaign_subs = array(
 
-        $campaign_subs = array(
             array(
                 'user_id' => 1,
                 'campaign_id' => 2,
@@ -51,8 +52,11 @@ class CampaignSubsSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )
+
         );
 
-        DB::table('campaign_subs')->insert($campaign_subs);
+        SeederHelper::randomize_dates($campaign_subs, TimePeriods::present, TimePeriods::week);
+
+        DB::table('campaign_subs')->insert($campaign_subs);*/
     }
 }

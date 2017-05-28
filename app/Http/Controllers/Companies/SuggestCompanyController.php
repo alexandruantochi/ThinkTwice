@@ -21,7 +21,18 @@ class SuggestCompanyController extends Controller
 
     public function saveCompany(Request $request)
     {
-            dd($request->get('name'));
+            if ($request->hasFile('logo'))
+            {
+                if($request->file('logo')->extension() != 'jpg' || $request->file('logo')->extension() != 'png' || $request->file('logo')->extension() != 'jepg')
+                {
+                    return view('errors.default')->with(['error'=>['message'=>'Bad file extension. Only jpg, png and jpeg accepted.']]);
+                }
+
+
+            }
+
+
+
     }
 
 }

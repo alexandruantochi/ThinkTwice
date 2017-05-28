@@ -167,6 +167,42 @@ class CompanyTableSeeder extends Seeder
                 'parent'=>0,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
+            ),
+
+            array(
+                'name'=>'L`Oreal',
+                'description'=>'L\'Oréal S.A. is a French cosmetics company headquartered in Clichy, Hauts-de-Seine with a registered office in Paris. It is the world\'s largest cosmetics company and has developed activities in the field of cosmetics, concentrating on hair colour, skin care, sun protection, make-up, perfume and hair care; the company is active in dermatology, toxicology, tissue engineering, and biopharmaceutical research fields and is the top nanotechnology patent-holder in the United States. The company is a component of Euro Stoxx 50 stock market index.',
+                'contact'=>'contact@loreal.com',
+                'rating'=>3.20,
+                'raters'=>150,
+                'faved'=>200,
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+
+              array(
+                  'name'=>'Nivea',
+                  'description'=>'Nivea is a German personal care brand that specializes in skin- and body-care. It is owned by the Hamburg-based company Beiersdorf Global AG. The company was founded on March 28, 1882, by pharmacist Paul Carl Beiersdorf. In 1890, it was sold to Oscar Troplowitz. Troplowitz kept working with his scientific consultant Paul Gerson Unna and the German chemist Isaac Lifschütz on a new skin care cream. In 1900, Lifschütz developed a water-in-oil emulsion as a skin cream with Eucerit, the first stable emulsion of its kind. This was the basis for Eucerin and, later, Nivea. Nivea comes from the Latin word niveus/nivea/niveum, meaning "snow-white".',
+                  'contact'=>'write-us@nivea.com',
+                  'rating'=>4.87,
+                  'raters'=>357,
+                  'faved'=>120,
+                  'parent'=>0,
+                  'created_at' => date('Y-m-d H:i:s'),
+                  'updated_at' => date('Y-m-d H:i:s')
+              ),
+
+            array(
+                'name'=>'De Beers Group',
+                'description'=>'The De Beers Group of Companies has a leading role in the diamond exploration, diamond mining, diamond retail, diamond trading and industrial diamond manufacturing sectors. The company is currently active in open-pit, large-scale alluvial, coastal and deep sea mining. The company operates in 28 countries and mining takes place in Botswana, Namibia, South Africa and Canada. Until the start of the 21st century, De Beers effectively had total control over the diamond market as both a monopoly and monopsony of diamonds. Opposition has since dismantled the complete monopoly, though De Beers is still a large shareholder and currently sells approximately 35%[4] of the world\'s rough diamond production through its Global Sightholder Sales and Auction Sales businesses.',
+                'contact'=>'contact@debeers.com',
+                'rating'=>1.87,
+                'raters'=>357,
+                'faved'=>17,
+                'parent'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             )
         );
         DB::table('companies')->insert($companies);

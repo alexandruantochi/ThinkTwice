@@ -39,6 +39,18 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 Route::get('/NewsFeed', 'NewsFeedController@index');
 
+Route::get('/suggestions/{id}', function ($id) {
+
+    $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();
+
+    $suggestions = new \App\Http\Controllers\Campaign\CustomClasses\SuggestionsAlg($DICampaigns, $DICampaigns->campaign_categories);
+
+    $results = $suggestions->makeSuggstions($id, 6);
+
+    var_dump($results);
+
+});
+
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');
 Route::get('/products', 'Products\ProductsController@index');

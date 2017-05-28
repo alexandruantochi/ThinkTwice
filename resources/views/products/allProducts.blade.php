@@ -12,7 +12,7 @@
             @foreach($products as $value)
                 <div class="col text-center"style="margin: 3px" >
                     <div class="card">
-                        <a href="#">
+                        <a href="">
                             <img class="card-img-top" src="{{asset('images/products/id/'.$value->id.'.jpg')}}" alt="{{$value->name}}"  width="140" height="140">
                         </a>
                         <div class="card-block">
@@ -21,7 +21,7 @@
                             </p>
                             <br>
                             <p>
-                                <a class="btn btn-secondary" href="#" role="button">View details >></a>
+                                <a class="btn btn-secondary" href="products/profile/{{$value->id}}" role="button">View details >></a>
                             </p>
                         </div>
                     </div>
@@ -29,3 +29,5 @@
             @endforeach
         </div>
     </div>
+
+@endsection

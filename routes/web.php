@@ -37,6 +37,8 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
+Route::get('/NewsFeed', 'NewsFeedController@index');
+
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');
 Route::get('/products', 'Products\ProductsController@index');

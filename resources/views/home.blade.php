@@ -16,7 +16,7 @@
 <div class="panel-heading text-center">
     <h3 class="panel-title">Popular Campaigns</h3>
 </div>
-    <div class="panel-body" style="background-color: #d6dbdc; margin: 1em; padding-top: 1em;padding-bottom: 1em;">
+    <div class="panel-body" style="background-color: #d6dbdc; margin: 4em; padding-top: 2em;padding-bottom: 2em;">
         <div class="col-md-12">
             <div class="row text-center">
                 <div class="col-md-4 text-center">
@@ -67,7 +67,7 @@
 <div class="panel-heading text-center">
     <h3 class="panel-title">Top Worst Companies</h3>
 </div>
-<div class="panel-body" style="background-color: #d6dbdc; margin: 1em; padding-top: 1em;padding-bottom: 1em;">
+<div class="panel-body" style="background-color: #d6dbdc; margin: 3em; padding-top: 2em;padding-bottom: 2em;">
 
     <div class="col-md-12">
         <div class="row text-center">

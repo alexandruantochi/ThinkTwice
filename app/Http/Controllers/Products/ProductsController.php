@@ -13,8 +13,6 @@ class ProductsController extends Controller
 
         $categories=DB::table('products')->distinct()->pluck('category');
         $products=DB::table('products')->pluck('id','name');
-        $product_price=DB::table('products')->pluck('id','price');
-
-        return view('products.products',array('categories'=>$categories,'products'=>$products,'product_price'=>$product_price));
+        return view('products.products',array('categories'=>$categories,'products'=>$products));
     }
 }

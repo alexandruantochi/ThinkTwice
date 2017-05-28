@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Companies;
 
+use App\UGC_Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,14 +22,16 @@ class SuggestCompanyController extends Controller
 
     public function saveCompany(Request $request)
     {
-            if ($request->hasFile('logo'))
-            {
-                if($request->file('logo')->extension() != 'jpg' || $request->file('logo')->extension() != 'png' || $request->file('logo')->extension() != 'jepg')
-                {
-                    return view('errors.default')->with(['error'=>['message'=>'Bad file extension. Only jpg, png and jpeg accepted.']]);
+
+        $company = new UGC_Company();
+
+
+
+            if ($request->hasFile('logo')) {
+                if ($request->file('logo')->extension() != 'jpg' || $request->file('logo')->extension() != 'png' || $request->file('logo')->extension() != 'jepg') {
+                    return view('errors.default')->with(['error' => ['message' => 'Bad file extension. Only jpg, png and jpeg accepted.']]);
                 }
-
-
+                $request->file('logo');
             }
 
 

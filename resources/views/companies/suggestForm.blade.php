@@ -12,13 +12,13 @@
 
         <div class="form-group">
             <label for="companyName">Company Name</label>
-            <input name="name" type="text" class="form-control" id="companyName" aria-describedby="companyNameHelp" placeholder="Enter company name">
+            <input name="name" type="text" class="form-control" id="companyName" aria-describedby="companyNameHelp" placeholder="Enter company name" required>
             <small id="companyNameHelp" class="form-text text-muted">Enter the company's name you would like to suggest</small>
         </div>
 
         <div class="form-group">
             <label for="companyEmail">Email address</label>
-            <input name="email" type="email" class="form-control" id="companyEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <input name="email" type="email" class="form-control" id="companyEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
             <small id="emailHelp" class="form-text text-muted">Enter the company contact email.</small>
         </div>
 
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <label for="description">Company description.</label>
-            <textarea name="description" class="form-control" id="description" rows="5"></textarea>
+            <textarea name="description" class="form-control" id="description" rows="5"required></textarea>
         </div>
 
         <div class="form-group">
@@ -45,11 +45,11 @@
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input name="checkBox" type="checkbox" id="check" class="form-check-input">
+                <input name="checkBox" type="checkbox" id="check" class="form-check-input" onchange="document.getElementById('submitCompany').disabled = !this.checked;" required>
                 I agree that my submission follows the website rules.
             </label>
         </div>
-        <button id="submitCompany" type="submit" class="btn btn-primary" >Submit</button>
+        <button id="submitCompany" type="submit" class="btn btn-primary" disabled>Submit</button>
     </form>
     </div>
 

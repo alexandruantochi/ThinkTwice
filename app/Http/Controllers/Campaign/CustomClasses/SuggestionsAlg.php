@@ -24,6 +24,7 @@ final class SuggestionsAlg {
 
     public function makeSuggstions($user_id, $howMany) {
 
+
         //for every category that the user doesn't have a sub for, we assign a default value that will translate along the way in a lower probability of that category of being choosed
         $this->init_weights();
 
@@ -116,7 +117,9 @@ final class SuggestionsAlg {
 
         for($i = 0; $i < $howMany; $i++) {
 
+
             //generate a random probability
+
             $rand = mt_rand(0, 10000);
             $rand = $rand / 10000;
 
@@ -132,8 +135,10 @@ final class SuggestionsAlg {
 
                         $result = $this->DIObject->getResultByCategory($keys[$j]);
 
+
                     }while($count == array_push($suggestions, $result)); //array_push returns the size of the new array. If the size doesn't change we try adding another entry (randomly).
                                                                         // This is not optimal and can lead to infinite loop so it should be changed
+
 
                     break;
 

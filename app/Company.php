@@ -8,6 +8,8 @@ class Company extends Model
 {
     protected $table = 'companies';
 
+    protected $hidden = ['id','parent','created_at','updated_at'];
+
     public function products()
     {
         return $this->hasMany('App\Product');

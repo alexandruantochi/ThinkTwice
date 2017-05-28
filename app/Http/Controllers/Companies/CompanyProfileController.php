@@ -11,6 +11,13 @@ class CompanyProfileController extends Controller
 {
     public function viewProfile($id)
     {
-        return Company::where('id',$id)->first();
+
+        echo asset('js/temp/jquery.min.js');
+        //return Company::where('id',$id)->first();
+    }
+
+    public function viewProducts($id)
+    {
+
     }
 }

@@ -18,13 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 //Alexandru Antochi
-Route::get('/company/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('/companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
 Route::get('/companies/browse', 'Companies\CompanyBrowserController@main');
-//
+Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
+/*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
 Route::post('/contact','ContactController@submit');
-
+*/
 //Ionut Arhire
 Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@index');
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
@@ -39,7 +40,9 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 Route::get('/NewsFeed', 'NewsFeedController@index');
 
-/*Route::get('/suggestions/{id}', function ($id) {
+
+Route::get('/suggestions/{id}', function ($id) {
+
 
     $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();
 
@@ -48,8 +51,8 @@ Route::get('/NewsFeed', 'NewsFeedController@index');
     $results = $suggestions->makeSuggstions($id, 6);
 
     var_dump($results);
+});
 
-});*/ //example of suggestions using
 
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');

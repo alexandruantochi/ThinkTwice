@@ -19,7 +19,7 @@ Auth::routes();
 
 //Alexandru Antochi
 Route::get('/company/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
-Route::get('/companies/browse', 'Companies\CompanyBrowserController@browseCompanies');
+Route::get('/companies/browse', 'Companies\CompanyBrowserController@main');
 //
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
@@ -36,6 +36,8 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
+
+Route::get('/NewsFeed', 'NewsFeedController@index');
 
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');

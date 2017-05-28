@@ -52,6 +52,6 @@ class CompanyBrowserController extends Controller
     public function browseCampaigns($type)
     {
         $companies = Company::withCount('sup_campaigns')->get();
-            dd($cimpanies);
+            dd($companies);
     }
 }

@@ -3,34 +3,22 @@
     <br>
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col-2">
                     <div class="list-group">
-                        <a href="#" class="list-group-item active">
+                        <p class="list-group-item active">
                             Product Categories
-                        </a>
+                        </p>
+
                         @foreach($categories as $value)
-                        <a href="#" class="list-group-item list-group-item-action">{{$value}}</a>
+                            <strong><a href="/category/{{$value}}"  class="list-group-item list-group-item-action">{{$value}}</a></strong>
                         @endforeach
+
+                        <strong><a href="/products/all"  class="list-group-item list-group-item-action">all products</a></strong>
                     </div>
                 </div>
-
-            @foreach($products as $key=>$value)
-                    <div class="col text-center"style="margin: 3px" >
-                        <div class="card">
-                            <a href="#">
-                                <img class="card-img-top" src="{{asset('images/products/id/'.$value.'.jpg')}}" alt="{{$value}}"  width="140" height="140">
-                            </a>
-                            <div class="card-block">
-                                <p class="card-text">
-                                    <strong>{{$key}}</strong>
-                                </p>
-                                <p>
-                                    <a class="btn btn-secondary" href="#" role="button">View details >></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            @endforeach
+                <div class="col-10">
+                    <h1>Aici vor fi afisate niste statistici</h1>
+                </div>
           </div>
         </div>
 @endsection

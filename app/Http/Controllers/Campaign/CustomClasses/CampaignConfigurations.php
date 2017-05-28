@@ -17,7 +17,7 @@ final class CampaignConfigurations {
 
         $this->num_default_results = 6;
         $this->num_results_page = 10;
-        $this->default_trending_period = 12;
+        $this->default_trending_period = TimePeriods::week;
 
     }
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Campaign;
 
 use App\Http\Controllers\Campaign\CustomClasses\CampaignConfigurations;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -12,11 +11,11 @@ class CampaignsTrendingController extends Controller
 {
     function index() {
 
-        $date = Carbon::now();
-        $date = $date->subHours(CampaignConfigurations::get_Instance()->default_trending_period);
+        $date = time() - CampaignConfigurations::get_Instance()->default_trending_period;
+        $date = date('Y-m-d H:i:s', $date);
 
         $subQuery = DB::table('campaign_subs')
-                        ->where('created_at', '>', "{$date->toDateTimeString()}")
+                        ->where('created_at', '>', "{$date}")
                         ->groupBy('campaign_id')
                         ->orderBy('count', 'desc')
                         ->selectRaw('count(*) count, campaign_id');

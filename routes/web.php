@@ -19,7 +19,7 @@ Auth::routes();
 
 //Alexandru Antochi
 Route::get('/company/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
-Route::get('/companies/browse', 'Companies\CompanyBrowserController@browseCompanies');
+Route::get('/companies/browse', 'Companies\CompanyBrowserController@main');
 //
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');

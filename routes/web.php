@@ -40,7 +40,9 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 Route::get('/NewsFeed', 'NewsFeedController@index');
 
-/*Route::get('/suggestions/{id}', function ($id) {
+
+Route::get('/suggestions/{id}', function ($id) {
+
 
     $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();
 
@@ -49,8 +51,8 @@ Route::get('/NewsFeed', 'NewsFeedController@index');
     $results = $suggestions->makeSuggstions($id, 6);
 
     var_dump($results);
+});
 
-});*/ //example of suggestions using
 
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');

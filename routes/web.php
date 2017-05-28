@@ -40,6 +40,10 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');
 Route::get('/products', 'Products\ProductsController@index');
+Route::get('/category/{categoryName}', 'Products\ProductsCategoryFilterController@displayProductProfile');
+Route::get('/products/all', 'Products\ProductsCategoryFilterController@displayAllProducts');
+
+
 
 //Silitra Dragos
 Route::get('/profile','ProfileController@showprofile');

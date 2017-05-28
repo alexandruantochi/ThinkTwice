@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Auth;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,13 +22,16 @@ Route::get('/', function () {
 Auth::routes();
 
 //Alexandru Antochi
-Route::get('/company/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
-Route::get('/companies/browse', 'Companies\CompanyBrowserController@main');
-//
+Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
+Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
+Route::get('companies/suggest','Companies\SuggestCompanyController@main');
+Route::post('companies/suggest', 'Companies\SuggestCompanyController@saveCompany');
+/*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
 Route::post('/contact','ContactController@submit');
-
+*/
 //Ionut Arhire
 Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@index');
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
@@ -38,6 +45,20 @@ Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 Route::get('/NewsFeed', 'NewsFeedController@index');
+
+
+Route::get('/suggestions/{id}', function ($id) {
+
+
+    $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();
+
+    $suggestions = new \App\Http\Controllers\Campaign\CustomClasses\SuggestionsAlg($DICampaigns, $DICampaigns->campaign_categories);
+
+    $results = $suggestions->makeSuggstions($id, 6);
+
+    var_dump($results);
+});
+
 
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');
@@ -55,7 +76,8 @@ Route::get('/profile/edit','EditformController@editprofile');
 Route::get('/auth/login','LoginuserController@show');
 Route::get('/auth/register','RegisteruserController@show');
 
-
+//
+Route::get('auth/logout', function() { Auth::logout(); echo "Logged out.";});
 
 
 Route::get('/home', 'home\HomeController@index');

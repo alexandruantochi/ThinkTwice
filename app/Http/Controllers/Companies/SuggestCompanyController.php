@@ -16,14 +16,12 @@ class SuggestCompanyController extends Controller
 
     public function main(Request $request)
     {
-
             return view('companies.suggestForm')->with(['user' => Auth::user()]);
-
     }
 
-    public function checkCompanyName($name)
+    public function saveCompany(Request $request)
     {
-
+            dd($request->get('name'));
     }
 
 }

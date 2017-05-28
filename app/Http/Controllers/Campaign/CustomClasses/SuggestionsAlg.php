@@ -24,16 +24,22 @@ final class SuggestionsAlg {
 
     public function makeSuggstions($user_id, $howMany) {
 
+        //for every category that the user doesn't have a sub for, we assign a default value that will translate along the way in a lower probability of that category of being choosed
         $this->init_weights();
 
+        //every category will have associated a number representing the number of occurences of that category in the user's subs. The higher the number, the higher the probability the category is chosen.
         $stats = $this->DIObject->getStats($user_id);
 
+        //updates the category array with the above results leaving the categories that the user doesn't have a sub for, defaulted
         $this->update_weights($stats);
 
+        //we exponentiate the weights so that differences in probability become more accentuated giving the suggestions more relevance
         $this->exponentiate_weights();
 
+        //we will tranlate the above values into percentages of their sum; we then redo the values of the array according to roullete selection
         $roullete = $this->prepare_roullete_selection();
 
+        //generate $howMany suggestions
         return $this->generate_suggestions($roullete, $howMany);
 
     }
@@ -110,6 +116,7 @@ final class SuggestionsAlg {
 
         for($i = 0; $i < $howMany; $i++) {
 
+            //generate a random probability
             $rand = mt_rand(0, 10000);
             $rand = $rand / 10000;
 
@@ -125,7 +132,8 @@ final class SuggestionsAlg {
 
                         $result = $this->DIObject->getResultByCategory($keys[$j]);
 
-                    }while($count == array_push($suggestions, $result));
+                    }while($count == array_push($suggestions, $result)); //array_push returns the size of the new array. If the size doesn't change we try adding another entry (randomly).
+                                                                        // This is not optimal and can lead to infinite loop so it should be changed
 
                     break;
 

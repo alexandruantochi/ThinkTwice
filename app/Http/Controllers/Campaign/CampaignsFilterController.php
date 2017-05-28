@@ -9,6 +9,22 @@ use Illuminate\Support\Facades\DB;
 
 class CampaignsFilterController extends Controller
 {
+    function index(Request $request) {
+        
+        switch($request->get('option')) {
+
+            case "byName" :
+                return $this->byName($request);
+            case "byCategory" :
+                return $this->byCategory($request);
+            case "byOrganizer" :
+                return $this->byOrganizer($request);
+            default :
+                return view('errors.badRequest');
+
+        }
+    }
+
     function byName(Request $request) {
 
         //echo $request->get('name');
@@ -25,7 +41,7 @@ class CampaignsFilterController extends Controller
     function byCategory(Request $request) {
 
         $results = DB::table('campaigns')
-                        ->where('category', 'like', "%{$request->get('category')}%")
+                        ->where('category', 'like', "%{$request->get('name')}%")
                         ->orderBy('name', 'desc')
                         ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
@@ -36,7 +52,7 @@ class CampaignsFilterController extends Controller
     function byOrganizer(Request $request) {
 
         $results = DB::table('users')
-                            ->where('users.name', 'like', "%{$request->get('organizer')}%")
+                            ->where('users.name', 'like', "%{$request->get('name')}%")
                             ->join('campaigns', 'campaigns.organizer_id', '=', 'users.id')
                             ->orderBy('organizer_name', 'asc')
                             ->selectRaw('users.name organizer_name, campaigns.*')

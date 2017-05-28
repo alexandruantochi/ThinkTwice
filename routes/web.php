@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Auth;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,9 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 //Alexandru Antochi
-Route::get('/companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
-Route::get('/companies/browse', 'Companies\CompanyBrowserController@main');
+Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
+Route::get('companies/suggest','Companies\SuggestCompanyController@main');
 /*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');
@@ -68,7 +73,8 @@ Route::get('/profile/edit','EditformController@editprofile');
 Route::get('/auth/login','LoginuserController@show');
 Route::get('/auth/register','RegisteruserController@show');
 
-
+//
+Route::get('auth/logout', function() { Auth::logout(); echo "Logged out.";});
 
 
 Route::get('/home', 'home\HomeController@index');

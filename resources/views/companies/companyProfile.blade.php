@@ -5,7 +5,7 @@
 
 
 
-    @include('layouts.profile', ['entityType'=>'companies'])
+
 
 
 

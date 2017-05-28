@@ -9,6 +9,7 @@ namespace App\Http\Controllers\Campaign\CustomClasses;
 
 abstract class TimePeriods
 {
+    const present = 0;
     const hour = 3600;
     const day = 86400;
     const week = 604800;
@@ -18,13 +19,7 @@ abstract class TimePeriods
 
 final class SeederHelper {
 
-    public function prepare_randomize_dates($time_ago, $time_increment) {
-
-
-
-    }
-
-    public static function generate_random_date($offset_to_start, $offset_from_start, &$created_at, &$updated_at) {
+    public static function generate_random_dates($offset_to_start, $offset_from_start, &$created_at, &$updated_at) {
 
         $top = time() - $offset_to_start;
         $bottom = $top - $offset_from_start;
@@ -41,7 +36,7 @@ final class SeederHelper {
     public static function randomize_dates(&$seeds, $offset_to_start, $offset_from_start) {
 
         for($i = 0; $i < count($seeds); $i++) {
-            SeederHelper::generate_random_date($offset_to_start, $offset_from_start, $seeds[$i]['created_at'], $seeds[$i]['updated_at']);
+            SeederHelper::generate_random_dates($offset_to_start, $offset_from_start, $seeds[$i]['created_at'], $seeds[$i]['updated_at']);
             $seeds[$i]['created_at'] = date('Y-m-d H:i:s', $seeds[$i]['created_at']);
             $seeds[$i]['updated_at'] = date('Y-m-d H:i:s', $seeds[$i]['updated_at']);
         }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Http\Controllers\Campaign\CustomClasses\SeederHelper;
+use App\Http\Controllers\Campaign\CustomClasses\TimePeriods;
 
 class UsersTableSeeder extends Seeder
 {
@@ -22,13 +24,36 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
-                'name' => 'Donkey Dong',
-                'email' => 'donkey69dong@gmail.com',
+                'name' => 'Daniel Abagiu',
+                'email' => 'danielabagiu@gmail.com',
                 'password' => 'savarina',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'name' => 'Floricica Dansatoarea',
+                'email' => 'huooooo@gmail.com',
+                'password' => 'huooooo',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'name' => 'Bruce Lee',
+                'email' => 'BruceLee@gmail.com',
+                'password' => 'be_like_water',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'name' => 'Mr. T',
+                'email' => 'coolT@gmail.com',
+                'password' => 'mysterious',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )
         );
+
+        SeederHelper::randomize_dates($users, TimePeriods::month, TimePeriods::week);
 
         DB::table('users')->insert($users);
     }

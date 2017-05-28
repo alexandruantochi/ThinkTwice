@@ -66,8 +66,10 @@ Route::get('/suggestions/{id}', function ($id) {
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');
 Route::get('/products', 'Products\ProductsController@index');
-Route::get('/category/{categoryName}', 'Products\ProductsCategoryFilterController@displayProductProfile');
 Route::get('/products/all', 'Products\ProductsCategoryFilterController@displayAllProducts');
+Route::get('/products/profile/{id}', 'Products\ProductsCategoryFilterController@displayProductProfile');
+Route::get('/category/{categoryName}', 'Products\ProductsCategoryFilterController@displayProductsCategory');
+
 
 
 

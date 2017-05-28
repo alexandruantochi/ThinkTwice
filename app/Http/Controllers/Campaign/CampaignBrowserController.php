@@ -16,7 +16,9 @@ class CampaignBrowserController extends Controller
             ->take(CampaignConfigurations::get_Instance()->num_default_results)
             ->get();
 
-        return view('campaigns.campaignMain')->with('default_campaigns', $default_campaigns);
+        //return view('campaigns.campaigns')->with('default_campaigns', $default_campaigns);
+
+        return $default_campaigns;
 
     }
 

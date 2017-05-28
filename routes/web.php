@@ -26,6 +26,7 @@ Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewPro
 Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
 Route::get('companies/suggest','Companies\SuggestCompanyController@main');
+Route::post('companies/suggest', 'Companies\SuggestCompanyController@saveCompany');
 /*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');

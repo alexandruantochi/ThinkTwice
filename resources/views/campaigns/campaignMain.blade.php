@@ -26,9 +26,11 @@
 
     </div>
 
+    <br/>
+
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <h3 class="panel-title">See The Tops</h3>
+            <h3 class="panel-title display-3">See The Tops</h3>
         </div>
 
         <div class="panel-body" style="background-color: #d6dbdc; margin: 4em; padding-top: 2em;padding-bottom: 2em;">
@@ -80,9 +82,41 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="panel-heading text-center">
+            <h1 class="panel-title display-3">Campaigns you may like</h1>
+        </div>
+
+        <br/>
+
+        <div class="container" align="center">
+            @foreach($default_campaigns->chunk(3) as $entitiesChunk)
+                <div class="row" style="margin-top:3%">
+                    @foreach($entitiesChunk as $entity)
+                        <div class="col-md-4">
+                            <div class="card" style="width: 20em;">
+                                <img class="card-img-top" src="{{asset('images/campaigns/'.$entity->id.'/logo.jpg')}}"
+                                     alt="{{asset('images/errors/error.jpg')}}" style="width:100%; height:13em">
+                                <div class="card-block">
+                                    <p class="card-title" title="{{ $entity->name }}" style="color:red; white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{ $entity->name }}</p>
+                                    <details style="...">
+                                        <summary>Description</summary>
+
+                                        <p class="card-text">{{$entity->description}}</p>
+                                    </details>
+
+                                    <a href="/campaigns/{{$entity->id}}" class="btn btn-outline-danger">Go</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+
+        </div>
 
     </div>
-
-
 
 @endsection

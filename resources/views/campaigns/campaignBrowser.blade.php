@@ -40,4 +40,6 @@
         <br>
     @endforeach
 
+    {{$campaigns->links()}}
+
 @endsection

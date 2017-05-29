@@ -19,6 +19,7 @@ class CreateCompanySuggestionsTable extends Migration
             $table->unique('name');
             $table->longText('description');
             $table->string('contact');
+            $table->string('suggester');
             $table->timestamps();
         });
     }

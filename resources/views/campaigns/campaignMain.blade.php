@@ -99,7 +99,7 @@
                                 <img class="card-img-top" src="{{asset('images/campaigns/'.$entity->id.'/logo.jpg')}}"
                                      alt="{{asset('images/errors/error.jpg')}}" style="width:100%; height:13em">
                                 <div class="card-block">
-                                    <p class="card-title" style="color:red; white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{ $entity->name }}</p>
+                                    <p class="card-title" title="{{ $entity->name }}" style="color:red; white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{ $entity->name }}</p>
                                     <details style="...">
                                         <summary>Description</summary>
 

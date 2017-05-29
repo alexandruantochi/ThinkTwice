@@ -22,17 +22,23 @@ Route::get('/', function () {
 Auth::routes();
 
 //Alexandru Antochi
+//CompanyProfileController
 Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
 Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/browse/{id}', 'Companies\CompanyBrowserController@getProducts');
+//Company API
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
+//Company Suggestion Controller
 Route::get('companies/suggest','Companies\SuggestCompanyController@main');
 Route::post('companies/suggest', 'Companies\SuggestCompanyController@saveCompany');
+//Company Administration
 Route::get('companies/admin','Companies\CompanyAdminController@main');
+Route::get('companies/admin/all','Companies\CompanyAdminController@viewAll');
+Route::get('companies/admin/allUGC','Companies\CompanyAdminController@viewALLUGC');
 Route::get('companies/admin/editUGC/{id}', 'Companies\CompanyAdminController@editSuggestion');
 Route::get('companies/admin/edit/{id}','Companies\CompanyAdminController@editCompany');
-Route::get('companies/admin/view/{id}','Companies\CompanyAdminController@viewCompany');
-Route::get('companies/admin/viewUGC/{id}','Companies\CompanyAdminController@viewSuggestion');
+Route::get('companies/admin/view/{id}','Companies\CompanyAdminController@viewCompanyDetails');
+Route::get('companies/admin/viewUGC/{id}','Companies\CompanyAdminController@viewSuggestionDetails');
 /*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');

@@ -31,10 +31,10 @@
         <br>
         <div class="row text-center">
             <div class="col">
-                <a class="btn-lg btn-primary" href="products/profile/{{$product->id-1}}" role="button"> Previus Product </a>
+                <a class="btn-lg btn-primary" href="/products/profile/{{$product->id-1}}" role="button"> Previus Product </a>
             </div>
             <div class="col">
-                <a class="btn-lg btn-primary" href="products/profile/{{$product->id+1}}" role="button"> Next Product>> </a>
+                <a class="btn-lg btn-primary" href="/products/profile/{{$product->id+1}}" role="button"> Next Product>> </a>
             </div>
         </div>
 

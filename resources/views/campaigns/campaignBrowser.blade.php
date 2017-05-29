@@ -24,7 +24,12 @@
                     </div>
                     <div class="media-body">
                         <h3 class="media-heading display-4" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{$campaign->name}}</h3>
-                        <h4 class="media-heading" style="color:green">{{ $type_of_count . $campaign->count}}</h4>
+
+                        @if($type_of_count != "")
+
+                            <h4 class="media-heading" style="color:green">{{ $type_of_count . $campaign->count}}</h4>
+
+                        @endif
 
                         <details style="...">
                             <summary>Description</summary>

@@ -23,7 +23,7 @@ class CampaignsPopularityController extends Controller
                                 ->selectRaw('subQuery.count, campaigns.*')
                                 ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $popular_campaigns;
+        return view('campaigns.campaignBrowser')->with('campaigns', $popular_campaigns);
 
     }
 }

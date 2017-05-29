@@ -21,7 +21,7 @@
                             </p>
                             <br>
                             <p>
-                                <a class="btn btn-secondary" href="products/profile/{{$value->id}}" role="button">View details >></a>
+                                <a class="btn btn-secondary" href="/products/profile/{{$value->id}}" role="button">View details >></a>
                             </p>
                         </div>
                     </div>

@@ -5,7 +5,8 @@
     <br>
 
     <div class="panel-heading text-center">
-        <h1 class="panel-title display-3">Popularity</h1>
+        <h1 class="panel-title display-3">{{$title}}</h1>
+        {{$sub_title}}
     </div>
 
     <br>
@@ -23,7 +24,7 @@
                     </div>
                     <div class="media-body">
                         <h3 class="media-heading display-4" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{$campaign->name}}</h3>
-                        <h4 class="media-heading">{{ "Popularity count: " . $campaign->count}}</h4>
+                        <h4 class="media-heading" style="color:green">{{ $type_of_count . $campaign->count}}</h4>
 
                         <details style="...">
                             <summary>Description</summary>

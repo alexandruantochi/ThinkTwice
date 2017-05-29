@@ -27,7 +27,14 @@ class CampaignsTrendingController extends Controller
                                         ->selectRaw('subQuery.count, campaigns.*')
                                         ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $trending_campaigns;
+        $title = "Trending";
+        $sub_title = "The Trending Count Represents How Many Users Subscribed To The Campaign In The Last Week";
+        $type_of_count = "Trending Count: ";
+
+        return view('campaigns.campaignBrowser')->with('campaigns', $trending_campaigns)
+            ->with('title', $title)
+            ->with('sub_title', $sub_title)
+            ->with('type_of_count', $type_of_count);
 
     }
 }

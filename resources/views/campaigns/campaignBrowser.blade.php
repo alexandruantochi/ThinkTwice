@@ -6,6 +6,9 @@
 
     <div class="panel-heading text-center">
         <h1 class="panel-title display-3">{{$title}}</h1>
+
+        <br>
+
         {{$sub_title}}
     </div>
 

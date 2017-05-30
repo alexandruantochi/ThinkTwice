@@ -18,7 +18,20 @@ class CampaignProfileController extends Controller
                         ->where('id', '=', $campaign[0]->organizer_id)
                         ->get();
 
-        return view('campaigns.campaignProfile')->with('entity', $campaign[0])->with('organizer', $organizer[0]);
+        $count_companies_against = DB::table('agn_campaigns')
+                                        ->selectRaw('COUNT(*) count')
+                                        ->where('agn_campaigns.campaign_id', '=', $id)
+                                        ->get();
+        $count_companies_support = DB::table('sup_campaigns')
+                                        ->selectRaw('COUNT(*) count')
+                                        ->where('sup_campaigns.campaign_id', '=', $id)
+                                        ->get();
+
+        return view('campaigns.campaignProfile')
+            ->with('entity', $campaign[0])
+            ->with('organizer', $organizer[0])
+            ->with('count_companies_against', $count_companies_against[0])
+            ->with('count_companies_support', $count_companies_support[0]);
 
     }
 }

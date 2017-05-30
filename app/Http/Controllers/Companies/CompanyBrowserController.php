@@ -49,16 +49,16 @@ class CompanyBrowserController extends Controller
 
     public function browse($orderBy, $order)
     {
-        $companies = Company::orderBy($orderBy, $order)->paginate(3);
+        $companies = Company::orderBy($orderBy, $order)->paginate(5);
 
-        return view('companies.browse', compact('companies'));
+        return view('companies.companyBrowser', compact('companies'));
     }
 
     public function browseCampaigns($type)
     {
-        $companies = Company::withCount($type)->orderBy($type."_count")->paginate(3);
+        $companies = Company::withCount($type)->orderBy($type."_count")->paginate(5);
 
-        return view('companies.browse', compact('companies'));
+        return view('companies.companyBrowser', compact('companies'));
 
     }
 }

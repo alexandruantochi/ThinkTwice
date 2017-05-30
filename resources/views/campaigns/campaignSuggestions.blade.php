@@ -6,6 +6,11 @@
 
     <div class="panel-heading text-center">
         <h1 class="panel-title display-3">My Suggestions</h1>
+
+        <br>
+        <br>
+
+        <a href="/campaigns/suggestions" class="btn btn-outline-info">Roll the dice</a>
     </div>
 
     <br>

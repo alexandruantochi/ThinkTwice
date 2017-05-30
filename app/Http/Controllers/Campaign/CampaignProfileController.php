@@ -14,7 +14,9 @@ class CampaignProfileController extends Controller
                         ->where('id', '=', $id)
                         ->get();
 
-        return $campaign;
+        //dd($campaign);
+
+        return view('campaigns.campaignProfile')->with('entity', $campaign[0]);
 
     }
 }

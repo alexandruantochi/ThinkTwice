@@ -28,12 +28,18 @@
                         </p>
                     </div>
 
-                    <a href="/campaigns/filter?name={{$entity->category}}&option=byCategory">
-                        <p>Category: {{$entity->category}}</p>
-                    </a>
+                    <p>Category:
+                        <a href="/campaigns/filter?name={{$entity->category}}&option=byCategory">
+                            {{$entity->category}}
+                        </a>
+                    </p>
 
 
-                    <p>Organizer: {{$organizer->name}}</p>
+                    <p>Organizer:
+                        <a href="/campaigns/filter?name={{$organizer->name}}&option=byOrganizer">
+                            {{$organizer->name}}
+                        </a>
+                    </p>
 
 
 

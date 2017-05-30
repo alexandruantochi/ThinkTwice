@@ -55,7 +55,8 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 
 Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
-Route::get('/campaigns/create/FirstForm', 'Campaign\CampaignCreateController@firstForm');
+Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
+Route::post('/campaigns/create', 'Campaign\CampaignCreateController@saveCampaign');
 
 Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');
 Route::get('/campaigns/{id}/unsubscribe', 'Campaign\CampaignSubscriptionController@unsubscribe');

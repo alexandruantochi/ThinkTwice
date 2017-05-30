@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="{{asset('js/temp/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-4/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/google_chart/loader.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/bootstrap-4/bootstrap.min.css')}}"/>
 </head>
 <body>
-<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse  bg-inverse">
+<nav class="navbar sticky-top navbar-toggleable-md navbar-inverse bg-inverse">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,9 +29,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/products">Products</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
-            </li>
+            @if(Auth::check())
+                <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/profile" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/logout">Log out</a>
+                        </div>
+                    </li>
+                </li>
+            @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -41,31 +49,19 @@
                 <a class="dropdown-item" href="#">UPC</a>
                 <a class="dropdown-item" href="#">Product name</a>
                 <a class="dropdown-item" href="#">Campaign name</a>
-                <a class="dropdown-item" href="#">Companie name</a>
+                <a class="dropdown-item" href="#">Company name</a>
             </div>
         </form>
     </div>
 </nav>
-<br>
-<br>
-
 @yield('content')
-
-
-<br>
-<br>
-<br>
-<br>
-
-
-<nav class="navbar navbar-light bg-faded text-center" style="background-color:#333136;">
-    <br>
-    <h3 style="color: white">
-        Follow us:  <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Facebook</button>
-        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Instagram</button>
-        <button type="button" class="btn btn-secondary btn-lg"><span class="glyphicon glyphicon-user" style="color: #000"></span> Twiter</button>
-    </h3>
+<nav class="navbar fixed-bottom navbar-light bg-faded text-center" style="background-color:#333136;">
+    <p style="color: white">
+        <strong>Follow us:</strong>
+        <button type="button" class="btn btn-secondary "><span class="glyphicon glyphicon-user" style="color: #000"></span> Facebook</button>
+        <button type="button" class="btn btn-secondary "><span class="glyphicon glyphicon-user" style="color: #000"></span> Instagram</button>
+        <button type="button" class="btn btn-secondary "><span class="glyphicon glyphicon-user" style="color: #000"></span> Twiter</button>
+    </p>
 </nav>
-
 </body>
 </html>

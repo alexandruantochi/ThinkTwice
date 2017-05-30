@@ -24,11 +24,18 @@ class ProductsCategoryFilterController extends Controller
     public function displayProductProfile($id){
 
         $product=DB::table('products')->where('id',$id)->first();
+
+        $company_name=DB::table('companies')->where('products.id',$id)
+            ->select(DB::raw('companies.name as c_name'))
+            ->join('products', 'products.company_id', '=', 'companies.id')
+            ->first();
+
         $substances=DB::table('products')->where('products.id',$id)
             ->join('product_substance', 'product_substance.product_id', '=', 'products.id')
             ->join('substances', 'substances.id', '=', 'product_substance.substance_id')
             ->orderBy('substances.name', 'asc')->get();
-        return view('products/productProfile', array('product'=>$product,'substances'=>$substances));//compact('product'));
+
+        return view('products/productProfile', array('product'=>$product,'substances'=>$substances,'company_name'=>$company_name));//compact('product'));
         //array('product'=>$product,'substances'=>$substances));
     }
 

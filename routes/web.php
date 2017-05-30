@@ -55,7 +55,7 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 
 Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
-Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
+Route::get('/campaigns/create/FirstForm', 'Campaign\CampaignCreateController@firstForm');
 
 Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');
 Route::get('/campaigns/{id}/unsubscribe', 'Campaign\CampaignSubscriptionController@unsubscribe');
@@ -69,7 +69,7 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 Route::get('/NewsFeed', 'NewsFeedController@index');
 
 
-Route::get('/suggestions/{id}', function ($id) {
+Route::get('/campaigns/suggestions', function ($id) {
 
 
     $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();

@@ -57,6 +57,9 @@ Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
 Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
 
+Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');
+Route::get('/campaigns/{id}/unsubscribe', 'Campaign\CampaignSubscriptionController@unsubscribe');
+
 Route::get('/campaigns/{id}/supported', 'Campaign\AssociatedCompaniesController@companiesSupported');
 Route::get('/campaigns/{id}/against', 'Campaign\AssociatedCompaniesController@companiesAgainst');
 

@@ -34,7 +34,6 @@
                         </a>
                     </p>
 
-
                     <p>Organizer:
                         <a href="/campaigns/filter?name={{$organizer->name}}&option=byOrganizer">
                             {{$organizer->name}}
@@ -52,6 +51,21 @@
                             {{$count_companies_support->count}}
                         </a>
                     </p>
+
+                    @if($is_authenticated)
+                        @if($is_already_subscribed->count)
+                            <a href="/campaigns/{{$entity->id}}/unsubscribe" style="color: green">
+                                <button type="submit" class="btn btn-outline-danger">Unsubscribe</button>
+                            </a>
+                        @else
+                            <a href="/campaigns/{{$entity->id}}/subscribe" style="color: green">
+                                <button type="submit" class="btn btn-outline-warning">Subscribe</button>
+                            </a>
+                        @endif
+
+                    @else
+
+                    @endif
 
                 </div>
 

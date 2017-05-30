@@ -129,17 +129,8 @@ final class SuggestionsAlg {
 
                 if ($rand < $roullete[$keys[$j]]) {
 
-                    $count = count($suggestions);
-
-                    do{
-
-                        $result = $this->DIObject->getResultByCategory($keys[$j]);
-
-
-                    }while($count == array_push($suggestions, $result)); //array_push returns the size of the new array. If the size doesn't change we try adding another entry (randomly).
-                                                                        // This is not optimal and can lead to infinite loop so it should be changed
-
-
+                    $result = $this->DIObject->getResultByCategory($keys[$j]);
+                    array_push($suggestions, $result);
                     break;
 
                 }

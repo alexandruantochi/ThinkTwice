@@ -35,6 +35,12 @@ class CampaignSubsSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
+                'user_id' => 1,
+                'campaign_id' => 9,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
                 'user_id' => 2,
                 'campaign_id' => 3,
                 'created_at' => date('Y-m-d H:i:s'),
@@ -48,6 +54,54 @@ class CampaignSubsSeeder extends Seeder
             ),
             array(
                 'user_id' => 2,
+                'campaign_id' => 9,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 2,
+                'campaign_id' => 4,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 3,
+                'campaign_id' => 8,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 3,
+                'campaign_id' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 3,
+                'campaign_id' => 1,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 3,
+                'campaign_id' => 9,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 3,
+                'campaign_id' => 4,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 4,
+                'campaign_id' => 9,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'user_id' => 4,
                 'campaign_id' => 4,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -57,19 +111,9 @@ class CampaignSubsSeeder extends Seeder
                 'campaign_id' => 9,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-            ),
-            array(
-                'user_id' => 1,
-                'campaign_id' => 9,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ),
-            array(
-                'user_id' => 2,
-                'campaign_id' => 9,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             )
+
+
 
         );
 

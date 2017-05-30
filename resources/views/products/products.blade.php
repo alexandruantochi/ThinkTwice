@@ -63,29 +63,31 @@
                 <div class="col-5" id="piechart" style="width: 400px; height: 400px"></div>
                 <div class="col-5" id="ratingReviewChart" style="width: 400px; height: 400px"></div>
           </div>
-            <div class="row">
-                @foreach($bestFiveProducts as $value)
-                    <div class="col text-center"style="margin: 3px" >
-                        <div class="card">
-                            <a  href="/products/profile/{{$value->p_id}}">
-                                <img class="card-img-top" src="{{asset('images/products/id/'.$value->p_id.'.jpg')}}" alt="{{$value->p_name}}"  width="140" height="140">
-                            </a>
-                            <div class="card-block">
-                                <p class="card-title" title="{{$value->p_name}}" style="white-space:nowrap; text-overflow:ellipsis; overflow: hidden">
-                                    <strong>{{$value->p_name}}</strong>
-                                </p>
-                                <p >
-                                    <strong>Rate : {{$value->p_rate}}</strong>
-                                </p>
-                                <br>
-                                <p>
-                                    <a class="btn btn-secondary" href="/products/profile/{{$value->p_id}}" role="button">View details >></a>
-                                </p>
-                            </div>
+        </div>
+    <div class="container">
+        <div class="row">
+            @foreach($bestFiveProducts as $value)
+                <div class="col text-center"style="margin: 3px" >
+                    <div class="card">
+                        <a  href="/products/profile/{{$value->p_id}}">
+                            <img class="card-img-top" src="{{asset('images/products/id/'.$value->p_id.'.jpg')}}" alt="{{$value->p_name}}"  width="140" height="140">
+                        </a>
+                        <div class="card-block">
+                            <p class="card-title" title="{{$value->p_name}}" style="white-space:nowrap; text-overflow:ellipsis; overflow: hidden">
+                                <strong>{{$value->p_name}}</strong>
+                            </p>
+                            <p >
+                                <strong>Rate : {{$value->p_rate}}</strong>
+                            </p>
+                            <br>
+                            <p>
+                                <a class="btn btn-secondary" href="/products/profile/{{$value->p_id}}" role="button">View details >></a>
+                            </p>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
+    </div>
     <br>
 @endsection

@@ -13,7 +13,6 @@
 
 use Illuminate\Support\Facades\Auth;
 
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -81,6 +80,7 @@ Route::get('/products', 'Products\ProductsController@index');
 Route::get('/products/all', 'Products\ProductsCategoryFilterController@displayAllProducts');
 Route::get('/products/profile/{id}', 'Products\ProductsCategoryFilterController@displayProductProfile');
 Route::get('/category/{categoryName}', 'Products\ProductsCategoryFilterController@displayProductsCategory');
+Route::post('/create',['uses'=>'Products\PostReviewsController@postCreatePost', 'as' => 'post.products/profile/{id}']);
 Route::get('/logout',['uses'=>'UserController@getLogout']);
 
 

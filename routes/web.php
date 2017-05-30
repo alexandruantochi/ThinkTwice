@@ -41,11 +41,6 @@ Route::get('companies/admin/ugc','Companies\CompanyAdminController@viewSuggestio
 Route::get('companies/admin/ugc_delete/{id}','Companies\CompanyAdminController@deleteSuggestion');
 Route::get('companies/admin/ugc_approve/{id}','Companies\CompanyAdminController@approveSuggestion');
 
-/*
-Route::get('/companies/{order}', 'CompanyBrowserController@order');
-Route::get('/contact','ContactController@index');
-Route::post('/contact','ContactController@submit');
-*/
 //Ionut Arhire
 Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@index');
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');

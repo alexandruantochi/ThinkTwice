@@ -14,7 +14,7 @@
                     <p><strong>Price: </strong>{{$product->price}}$</p>
                     <p><strong>Company: </strong>{{$company_name->c_name}}</p>
                     <p><strong>UPC:  </strong>{{$product->UPC}} </p>
-                    <p><strong>Average rating:  </strong>{{$averageRating->p_rate}} </p>
+                    <p><strong>Average rating :  </strong>{{$averageRating->p_rate}} </p>
                 </div>
             </div>
         <br>
@@ -40,7 +40,24 @@
                 <a class="btn-lg btn-primary" href="/products/profile/{{$product->id+1}}" role="button"> Next Product>> </a>
             </div>
         </div>
-
+        <br>
+        <div class="row">
+            <div class="col">
+                <header><h3>What do you have to say about this product?</h3></header>
+                <form action="{{route('post.products/profile/{id}')}}" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" name="new_post" id="new_post" rows="5"></textarea>
+                    </div>
+                    @if(Auth::check())
+                        <button type="submit" class="btn btn-primary">Create Review</button>
+                        <input type="hidden" value="{{Session::token() }}" name="_token">
+                    @endif
+                </form>
+                @if(!Auth::check())
+                    <p style="color:  red"><strong>In order to post a review you need to log in with your user account:</strong> <a href="/login"><button class="btn btn-primary">Log in</button></a></p>
+                @endif
+            </div>
+        </div>
         <br>
         <div class="row">
             <div class="col">
@@ -49,7 +66,24 @@
                         Product reviews
                     </p>
                     @foreach($productReviews as $value)
-                        <p class="list-group-item">{{$value->review}}</p>
+                        <div class="list-group-item">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Review by <strong>{{$value->u_name}}</strong>, rating: {{$value->p_rate}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+
+                                </div>
+                                <div class="col-10">
+                                    <p>
+                                        {{$value->review}}
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>

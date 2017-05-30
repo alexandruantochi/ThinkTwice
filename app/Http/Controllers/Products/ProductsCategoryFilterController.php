@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Products;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\ProductReviews;
 
 
 class ProductsCategoryFilterController extends Controller
@@ -41,10 +43,12 @@ class ProductsCategoryFilterController extends Controller
             ->first();
         if($averageRating->p_rate ==null) $averageRating->p_rate=0;
 
-        $productReviews=DB::table('product_reviews')->where('product_reviews.product_id', $id)->get();
+        $productReviews=DB::table('product_reviews')->where('product_reviews.product_id', $id)
+            ->select(DB::raw(' users.name as u_name,product_reviews.review as review,product_reviews.product_rating as p_rate'))
+            ->join('users', 'users.id', '=', 'product_reviews.user_id')
+            ->get();
 
         return view('products/productProfile', array('product'=>$product,'substances'=>$substances,'company_name'=>$company_name,'productReviews'=>$productReviews,'averageRating'=>$averageRating));//compact('product'));
         //array('product'=>$product,'substances'=>$substances));
     }
-
 }

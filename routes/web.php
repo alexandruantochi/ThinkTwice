@@ -23,8 +23,10 @@ Auth::routes();
 //Alexandru Antochi
 //CompanyProfileController
 Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('companies/profile/{id}/fav','Companies\CompanyProfileController@favCompany');
 Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/browse/{id}', 'Companies\CompanyProfileController@viewProducts');
+
 //Company API
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
 //Company Suggestion Controller

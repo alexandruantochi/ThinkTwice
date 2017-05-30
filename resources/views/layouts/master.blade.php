@@ -24,7 +24,7 @@
                 <a class="nav-link" href="/campaigns">Campaigns</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/companies">Companies</a>
+                <a class="nav-link" href="/companies/browse">Companies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/products">Products</a>

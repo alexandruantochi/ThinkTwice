@@ -13,33 +13,33 @@ class CompanyBrowserController extends Controller
 
         switch ($request->input('type','highestRating')) {
             case 'highestRating':
-                return $this->browse('rating', 'desc');
+                return $this->browse('rating', 'desc',$request->input('type','highestRating'));
 
             case 'lowestRating':
-                return $this->browse('rating', 'asc');
+                return $this->browse('rating', 'asc',$request->input('type','highestRating'));
 
             case 'mostFaved':
-                return $this->browse('faved', 'desc');
+                return $this->browse('faved', 'desc',$request->input('type','highestRating'));
 
             case 'leastFaved':
-                return $this->browse('faved', 'asc');
+                return $this->browse('faved', 'asc',$request->input('type','highestRating'));
 
             case 'newest':
-                return $this->browse('updated_at', 'desc');
+                return $this->browse('updated_at', 'desc',$request->input('type','highestRating'));
 
             case 'oldest':
-                return $this->browse('updated_at', 'asc');
+                return $this->browse('updated_at', 'asc',$request->input('type','highestRating'));
 
             case 'nameAZ':
-                return $this->browse('name', 'asc');
+                return $this->browse('name', 'asc',$request->input('type','highestRating'));
 
             case 'nameZA':
-                return $this->browse('name', 'desc');
+                return $this->browse('name', 'desc',$request->input('type','highestRating'));
 
             case 'supported':
-                return $this->browseCampaigns('sup_campaigns');
+                return $this->browseCampaigns('sup_campaigns',$request->input('type','highestRating'));
             case 'against':
-                return $this->browseCampaigns('agn_campaigns');
+                return $this->browseCampaigns('agn_campaigns',$request->input('type','highestRating'));
 
             default:
                 abort(403, 'No such browsing method.');
@@ -47,18 +47,24 @@ class CompanyBrowserController extends Controller
         }
     }
 
-    public function browse($orderBy, $order)
+    public function browse($orderBy, $order, $path)
     {
-        $companies = Company::orderBy($orderBy, $order)->paginate(3);
 
-        return view('companies.browse', compact('companies'));
+        $companies = Company::orderBy($orderBy, $order)->paginate(5);
+
+        $companies->withPath('?type='.$path);
+
+        return view('companies.companyBrowser', compact('companies'));
     }
 
-    public function browseCampaigns($type)
+    public function browseCampaigns($type, $path)
     {
-        $companies = Company::withCount($type)->orderBy($type."_count")->paginate(3);
 
-        return view('companies.browse', compact('companies'));
+        $companies = Company::withCount($type)->orderBy($type."_count")->paginate(5);
+
+        $companies->withPath('?type='.$path);
+
+        return view('companies.companyBrowser', compact('companies'));
 
     }
 }

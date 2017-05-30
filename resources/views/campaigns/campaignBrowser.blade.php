@@ -50,4 +50,6 @@
 
     {{$campaigns->links()}}
 
+    @include('layouts.addSpaces');
+
 @endsection

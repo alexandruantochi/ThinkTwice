@@ -43,4 +43,6 @@
 
     </div>
 
+    @include('layouts.addSpaces');
+
 @endsection

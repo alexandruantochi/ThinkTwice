@@ -34,23 +34,26 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/profile" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/campaigns/subscriptions">My Campaigns</a>
+                            <a class="dropdown-item" href="/campaigns/suggestions">My Suggestions</a>
+                            <a class="dropdown-item" href="/campaigns/create">Create Campaign </a>
                             <a class="dropdown-item" href="/logout">Log out</a>
                         </div>
                     </li>
                 </li>
             @endif
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-danger my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <form class="form-inline my-2 my-lg-0" method="get" action="/search/filter">
+            <input class="form-control mr-sm-2" name="name" type="text" placeholder="Search">
+            <select name="option" class="custom-select" type="submit">
+                <option selected value="upc" >UPC</option>
+                <option value="p_name" >Product name</option>
+                <option value="cg_name" >Campaign name</option>
+                <option value="cp_name" >Company name</option>
+            </select>
+            <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" aria-haspopup="true" aria-expanded="false" >
                 Search
             </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">UPC</a>
-                <a class="dropdown-item" href="#">Product name</a>
-                <a class="dropdown-item" href="#">Campaign name</a>
-                <a class="dropdown-item" href="#">Company name</a>
-            </div>
         </form>
     </div>
 </nav>

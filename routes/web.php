@@ -55,6 +55,8 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 
 Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
+Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
+
 Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 

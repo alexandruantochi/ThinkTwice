@@ -13,9 +13,17 @@ class CampaignsByDateController extends Controller
 
         $byDate_campaigns = DB::table('campaigns')
                                 ->orderBy('created_at', 'desc')
+                                ->selectRaw('created_at count, campaigns.*')
                                 ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $byDate_campaigns;
+        $title = "By Date";
+        $sub_title = "";
+        $type_of_count = "Created At: ";
+
+        return view('campaigns.campaignBrowser')->with('campaigns', $byDate_campaigns)
+            ->with('title', $title)
+            ->with('sub_title', $sub_title)
+            ->with('type_of_count', $type_of_count);
 
     }
 }

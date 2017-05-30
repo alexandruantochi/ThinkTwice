@@ -16,6 +16,9 @@ class CompanyProfileController extends Controller
 
     public function viewProducts($id)
     {
-        dd(Company::with('products'));
+        $products = Company::find($id)->products;
+
+        return view('products.allProducts', compact('products'));
+
     }
 }

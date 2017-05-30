@@ -5,6 +5,7 @@
     <br>
 
     <div class="panel-heading text-center">
+
         <h1 class="panel-title display-3">{{$title}}</h1>
 
         <br>
@@ -15,29 +16,37 @@
     <br>
     <br>
 
-    @foreach($campaigns as $campaign)
+    @foreach($entities as $entity)
         <div class="container">
             <div class="row">
 
                 <div class="media">
                     <div class="media-left" style="margin-right: 3em">
-                        <a href="/campaigns/{{$campaign->id}}">
-                            <img class="media-object" src="{{asset('images/campaigns/'.$campaign->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
-                        </a>
+
+                        @if($entity_type == "campaigns")
+                            <a href="/campaigns/{{$entity->id}}">
+                                <img class="media-object" src="{{asset('images/campaigns/'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
+                            </a>
+                        @elseif($entity_type == "companies")
+                            <a href="/companies/{{$entity->id}}">
+                                <img class="media-object" src="{{asset('images/companies/'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
+                            </a>
+                        @endif
+
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading display-4" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{$campaign->name}}</h3>
+                        <h3 class="media-heading display-4" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{$entity->name}}</h3>
 
                         @if($type_of_count != "")
 
-                            <h4 class="media-heading" style="color:green">{{ $type_of_count . $campaign->count}}</h4>
+                            <h4 class="media-heading" style="color:green">{{ $type_of_count . $entity->count}}</h4>
 
                         @endif
 
                         <details style="...">
                             <summary>Description</summary>
 
-                            <p class="card-text">{{$campaign->description}}</p>
+                            <p class="card-text">{{$entity->description}}</p>
                         </details>
                     </div>
                 </div>
@@ -48,7 +57,7 @@
         <br>
     @endforeach
 
-    {{$campaigns->links()}}
+    {{$entities->links()}}
 
     @include('layouts.addSpaces');
 

@@ -42,13 +42,13 @@
                     </p>
 
                     <p>Companies Against:
-                        <a href="/campaigns/filter?name={{$organizer->name}}&option=byOrganizer" style="color: darkred">
+                        <a href="/campaigns/{{$entity->id}}/against" style="color: darkred">
                             {{$count_companies_against->count}}
                         </a>
                     </p>
 
                     <p>Companies Support:
-                        <a href="/campaigns/filter?name={{$organizer->name}}&option=byOrganizer" style="color: green">
+                        <a href="/campaigns/{{$entity->id}}/supported" style="color: green">
                             {{$count_companies_support->count}}
                         </a>
                     </p>

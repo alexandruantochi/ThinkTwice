@@ -50,18 +50,16 @@ Route::get('/campaigns/popularity', 'Campaign\CampaignsPopularityController@inde
 Route::get('/campaigns/trending', 'Campaign\CampaignsTrendingController@index');
 Route::get('/campaigns/byDate', 'Campaign\CampaignsByDateController@index');
 
-/*
-Route::get('/campaigns/byName', 'Campaign\CampaignsFilterController@byName');
-Route::get('/campaigns/byCategory', 'Campaign\CampaignsFilterController@byCategory');
-Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrganizer');*/
-
 Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
 Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
 Route::post('/campaigns/create', 'Campaign\CampaignCreateController@saveCampaign');
 
+Route::get('/campaigns/suggestions', 'Campaign\CampaignSuggestionController@index');
+Route::get('/campaigns/subscriptions', 'Campaign\CampaignSubscriptionController@getMySubs');
 Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');
 Route::get('/campaigns/{id}/unsubscribe', 'Campaign\CampaignSubscriptionController@unsubscribe');
+
 
 Route::get('/campaigns/{id}/supported', 'Campaign\AssociatedCompaniesController@companiesSupported');
 Route::get('/campaigns/{id}/against', 'Campaign\AssociatedCompaniesController@companiesAgainst');
@@ -70,20 +68,6 @@ Route::get('/campaigns/{id}', 'Campaign\CampaignProfileController@index');
 Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 
 Route::get('/NewsFeed', 'NewsFeedController@index');
-
-
-Route::get('/campaigns/suggestions', function ($id) {
-
-
-    $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();
-
-    $suggestions = new \App\Http\Controllers\Campaign\CustomClasses\SuggestionsAlg($DICampaigns, $DICampaigns->campaign_categories);
-
-    $results = $suggestions->makeSuggstions($id, 6);
-
-    var_dump($results);
-});
-
 
 //Alexandru Poputoaia
 Route::get('/home', 'Home\MainPageController@home');

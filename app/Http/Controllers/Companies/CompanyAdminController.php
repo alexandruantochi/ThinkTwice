@@ -33,6 +33,8 @@ class CompanyAdminController extends Controller
     public function viewSuggestions()
     {
 
+
+        return view('');
     }
 
     public function statistics()

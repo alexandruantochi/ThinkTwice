@@ -12,7 +12,7 @@
                     <div class="col text-center"style="margin: 3px" >
                         <div class="card">
                             <a href="{{$route}}{{$value->id}}">
-                                <img class="card-img-top" src="{{asset($image.$value->id.'.jpg')}}" alt="{{$image.$value->id.'.jpg'}}"  width="140" height="140">
+                                <img class="card-img-top" src="{{asset($image.$value->id.'/logo.jpg')}}" alt="{{$image.$value->id.'.jpg'}}"  width="140" height="140">
                             </a>
                             <div class="card-block">
                                 <p class="card-title" title="{{$value->name}}" style="white-space:nowrap; text-overflow:ellipsis; overflow: hidden">

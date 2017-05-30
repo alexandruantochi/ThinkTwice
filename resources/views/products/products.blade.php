@@ -70,7 +70,7 @@
                 <div class="col text-center"style="margin: 3px" >
                     <div class="card">
                         <a  href="/products/profile/{{$value->p_id}}">
-                            <img class="card-img-top" src="{{asset('images/products/id/'.$value->p_id.'.jpg')}}" alt="{{$value->p_name}}"  width="140" height="140">
+                            <img class="card-img-top" src="{{asset('images/products/'.$value->p_id.'/logo.jpg')}}" alt="{{$value->p_name}}"  width="140" height="140">
                         </a>
                         <div class="card-block">
                             <p class="card-title" title="{{$value->p_name}}" style="white-space:nowrap; text-overflow:ellipsis; overflow: hidden">

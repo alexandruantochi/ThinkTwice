@@ -33,7 +33,7 @@ class SearchController extends Controller
                 ->select(DB::raw('count(*) as number'))
                 ->first();
             $route="/products/profile/";
-            $image="images/products/id/";
+            $image="images/products/";
             $results=DB::table('products')->where('UPC','like',"%{$request->get('name')}%")
                                         ->get();
 
@@ -57,7 +57,7 @@ class SearchController extends Controller
             ->select(DB::raw('count(*) as number'))
             ->first();
         $route="/products/profile/";
-        $image="images/products/id/";
+        $image="images/products/";
         return view('search.search')->with('results',$results)
             ->with('title',$title)
             ->with('sub_title',$sub_title)

@@ -26,11 +26,13 @@ class CampaignsPopularityController extends Controller
         $title = "Popularity";
         $sub_title = "";
         $type_of_count = "Popularity count: ";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $popular_campaigns)
+        return view('campaigns.campaignBrowser')->with('entities', $popular_campaigns)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);;
 
     }
 }

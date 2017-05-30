@@ -28,7 +28,7 @@ class CreateSuggesterColumnOnUGCcompanies extends Migration
      */
     public function down()
     {
-        Schema::table('ucf_companies', function($table){
+        Schema::table('ugc_companies', function($table){
             $table->dropColumn('user_id');
         });
     }

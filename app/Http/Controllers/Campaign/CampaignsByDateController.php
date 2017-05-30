@@ -19,11 +19,13 @@ class CampaignsByDateController extends Controller
         $title = "By Date";
         $sub_title = "";
         $type_of_count = "Created At: ";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $byDate_campaigns)
+        return view('campaigns.campaignBrowser')->with('entities', $byDate_campaigns)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);
 
     }
 }

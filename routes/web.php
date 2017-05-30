@@ -33,13 +33,14 @@ Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
 Route::get('companies/suggest','Companies\SuggestCompanyController@main');
 Route::post('companies/suggest', 'Companies\SuggestCompanyController@saveCompany');
 //Company Administration
-Route::get('companies/admin','Companies\CompanyAdminController@main');
-Route::get('companies/admin/all','Companies\CompanyAdminController@viewAll');
-Route::get('companies/admin/allUGC','Companies\CompanyAdminController@viewALLUGC');
-Route::get('companies/admin/editUGC/{id}', 'Companies\CompanyAdminController@editSuggestion');
-Route::get('companies/admin/edit/{id}','Companies\CompanyAdminController@editCompany');
-Route::get('companies/admin/view/{id}','Companies\CompanyAdminController@viewCompanyDetails');
-Route::get('companies/admin/viewUGC/{id}','Companies\CompanyAdminController@viewSuggestionDetails');
+Route::get('companies/admin','Companies\CompanyAdminController@viewCompanies');
+Route::get('companies/edit/{id}','Companies\CompanyAdminController@editCompany');
+Route::get('companies/delete/{id}','Companies\CompanyAdminController@deleteCompany');
+Route::post('companies/edit/{id}','Companies\CompanyAdminController@saveEditedCompany');
+Route::get('companies/admin/ugc','Companies\CompanyAdminController@viewSuggestions');
+Route::get('companies/admin/ugc_delete/{id}','Companies\CompanyAdminController@deleteSuggestion');
+Route::get('companies/admin/ugc_approve/{id}','Companies\CompanyAdminController@approveSuggestion');
+
 /*
 Route::get('/companies/{order}', 'CompanyBrowserController@order');
 Route::get('/contact','ContactController@index');

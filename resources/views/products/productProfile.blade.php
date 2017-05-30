@@ -14,6 +14,7 @@
                     <p><strong>Price: </strong>{{$product->price}}$</p>
                     <p><strong>Company: </strong>{{$company_name->c_name}}</p>
                     <p><strong>UPC:  </strong>{{$product->UPC}} </p>
+                    <p><strong>Average rating:  </strong>{{$averageRating->p_rate}} </p>
                 </div>
             </div>
         <br>

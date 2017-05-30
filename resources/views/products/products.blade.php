@@ -15,19 +15,39 @@
                     }
                 @endphp
             ]);
-            var options = {
+
+            var reviews = google.visualization.arrayToDataTable([
+                ['Category', 'Number'],
+
+                @php
+                    foreach ($product_rating as $var)
+                    {
+                    echo "['".$var->product_rating."', ".$var->number."],";
+                    }
+                @endphp
+            ]);
+
+            var op_categ = {
                 title: 'Percentage of products categories',
                 //is3D:true,
                 pieHole: 0.5
             };
+            var op_rating = {
+                title: 'Percentage of product rating',
+                //is3D:true,
+                pieHole: 0.5
+            };
+
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            chart.draw(data, options);
+            var review= new google.visualization.PieChart(document.getElementById('ratingReviewChart'));
+            chart.draw(data, op_categ);
+            review.draw(reviews, op_rating);
         }
     </script>
     <br>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
+                <div class="col-2">
                     <div class="list-group">
                         <p class="list-group-item active">
                             Product Categories
@@ -40,7 +60,8 @@
                     </div>
                 </div>
 
-                <div class="col-6" id="piechart" style="width: 400px; height: 400px"></div>
+                <div class="col-5" id="piechart" style="width: 400px; height: 400px"></div>
+                <div class="col-5" id="ratingReviewChart" style="width: 400px; height: 400px"></div>
           </div>
             <div class="row">
 

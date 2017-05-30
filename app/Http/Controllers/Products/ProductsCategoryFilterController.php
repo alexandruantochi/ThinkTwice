@@ -35,7 +35,9 @@ class ProductsCategoryFilterController extends Controller
             ->join('substances', 'substances.id', '=', 'product_substance.substance_id')
             ->orderBy('substances.name', 'asc')->get();
 
-        return view('products/productProfile', array('product'=>$product,'substances'=>$substances,'company_name'=>$company_name));//compact('product'));
+        $productReviews=DB::table('product_reviews')->where('product_reviews.product_id', $id)->get();
+
+        return view('products/productProfile', array('product'=>$product,'substances'=>$substances,'company_name'=>$company_name,'productReviews'=>$productReviews));//compact('product'));
         //array('product'=>$product,'substances'=>$substances));
     }
 

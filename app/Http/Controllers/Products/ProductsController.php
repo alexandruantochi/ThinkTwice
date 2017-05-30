@@ -19,6 +19,11 @@ class ProductsController extends Controller
             ->groupBy('category')
             ->get();
 
-        return view('products.products',array('categories'=>$categories,'products'=>$products,'categories_pie'=>$categories_pie));
+        $product_rating=DB::table('product_reviews')
+            ->select(DB::raw('product_rating,count(*) as number'))
+            ->groupBy('product_rating')
+            ->get();
+
+        return view('products.products',array('categories'=>$categories,'products'=>$products,'categories_pie'=>$categories_pie,'product_rating'=>$product_rating));
     }
 }

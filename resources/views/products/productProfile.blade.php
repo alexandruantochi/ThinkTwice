@@ -41,12 +41,24 @@
         </div>
 
         <br>
-        <div class="row text-center">
+        <div class="row">
             <div class="col">
-                <p>Product Reviews Comming Soon</p>
+                <div class="list-group">
+                    <p class="list-group-item active">
+                        Product reviews
+                    </p>
+                    @foreach($productReviews as $value)
+                        <p class="list-group-item">{{$value->review}}</p>
+                    @endforeach
+                </div>
             </div>
         </div>
+
     </div>
+
+    </br>
+    </br>
+    </br>
     </br>
 
 @endsection

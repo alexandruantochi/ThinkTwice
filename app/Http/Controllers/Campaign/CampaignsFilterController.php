@@ -35,11 +35,13 @@ class CampaignsFilterController extends Controller
         $title = "By Name";
         $sub_title = "You searched for: " . $request->get('name');
         $type_of_count = "";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+        return view('campaigns.campaignBrowser')->with('entities', $results)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);
 
     }
 
@@ -54,11 +56,13 @@ class CampaignsFilterController extends Controller
         $title = "By Category";
         $sub_title = "You searched for: " . $request->get('name');
         $type_of_count = "Category: ";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+        return view('campaigns.campaignBrowser')->with('entities', $results)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);
 
     }
 
@@ -74,11 +78,13 @@ class CampaignsFilterController extends Controller
         $title = "By Organizer";
         $sub_title = "You searched for: " . $request->get('name');
         $type_of_count = "Organizer: ";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+        return view('campaigns.campaignBrowser')->with('entities', $results)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);
 
     }
 

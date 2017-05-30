@@ -30,11 +30,13 @@ class CampaignsTrendingController extends Controller
         $title = "Trending";
         $sub_title = "The Trending Count Represents How Many Users Subscribed To The Campaign In The Last Week";
         $type_of_count = "Trending Count: ";
+        $entity_type = "campaigns";
 
-        return view('campaigns.campaignBrowser')->with('campaigns', $trending_campaigns)
+        return view('campaigns.campaignBrowser')->with('entities', $trending_campaigns)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
-            ->with('type_of_count', $type_of_count);
+            ->with('type_of_count', $type_of_count)
+            ->with('entity_type', $entity_type);;
 
     }
 }

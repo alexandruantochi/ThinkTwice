@@ -26,17 +26,20 @@ class SuggestCompanyController extends Controller
         $company = new UGC_Company();
         $company->fill(['name' => $request->get('name'), 'description' => $request->get('description'),
             'contact' => $request->get('email'), 'suggester' => Auth::user()->name, 'user_id' => Auth::id()]);
-        $company->save();
 
+        $company->save();
         if ($request->hasFile('logo')) {
-            if ($request->file('logo')->getMimeType() != 'image/jpeg') {
+            if ($request->file('logo')->getMimeType() != 'image/png' && $request->file('logo')->getMimeType() != 'image/jpeg')
+            {
                 return view('errors.default')->with(['error' => ['message' => 'Bad file extension. Only pictures accepted.']]);
             }
             $logo = $request->file('logo');
-            $logo->storeAs("images/ugc_companies/" . $company->id, 'logo.png');
+            $logo->storeAs("public/images/ugc_companies/".$company->id, "logo.png");
         }
 
-        $error['message']='Company saved. Thanks!';
+
+
+        $error['message'] = 'Company saved. Thanks!';
         return view('errors.default', compact('error'));
     }
 }

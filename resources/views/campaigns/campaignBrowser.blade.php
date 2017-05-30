@@ -21,7 +21,7 @@
 
                 <div class="media">
                     <div class="media-left" style="margin-right: 3em">
-                        <a href="#">
+                        <a href="/campaigns/{{$campaign->id}}">
                             <img class="media-object" src="{{asset('images/campaigns/'.$campaign->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
                         </a>
                     </div>

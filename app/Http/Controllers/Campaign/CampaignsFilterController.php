@@ -20,21 +20,26 @@ class CampaignsFilterController extends Controller
             case "byOrganizer" :
                 return $this->byOrganizer($request);
             default :
-                return view('errors.badRequest');
+                return redirect('/campaigns');
 
         }
     }
 
     function byName(Request $request) {
 
-        //echo $request->get('name');
-
         $results = DB::table('campaigns')
                         ->where('name', 'like', "%{$request->get('name')}%")
                         ->orderBy('name', 'desc')
                         ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $results;
+        $title = "By Name";
+        $sub_title = "You searched for: " . $request->get('name');
+        $type_of_count = "";
+
+        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+            ->with('title', $title)
+            ->with('sub_title', $sub_title)
+            ->with('type_of_count', $type_of_count);
 
     }
 
@@ -43,9 +48,17 @@ class CampaignsFilterController extends Controller
         $results = DB::table('campaigns')
                         ->where('category', 'like', "%{$request->get('name')}%")
                         ->orderBy('name', 'desc')
+                        ->selectRaw('campaigns.category count, campaigns.*')
                         ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $results;
+        $title = "By Category";
+        $sub_title = "You searched for: " . $request->get('name');
+        $type_of_count = "Category: ";
+
+        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+            ->with('title', $title)
+            ->with('sub_title', $sub_title)
+            ->with('type_of_count', $type_of_count);
 
     }
 
@@ -54,11 +67,18 @@ class CampaignsFilterController extends Controller
         $results = DB::table('users')
                             ->where('users.name', 'like', "%{$request->get('name')}%")
                             ->join('campaigns', 'campaigns.organizer_id', '=', 'users.id')
-                            ->orderBy('organizer_name', 'asc')
-                            ->selectRaw('users.name organizer_name, campaigns.*')
+                            ->orderBy('count', 'asc')
+                            ->selectRaw('users.name count, campaigns.*')
                             ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
-        return $results;
+        $title = "By Organizer";
+        $sub_title = "You searched for: " . $request->get('name');
+        $type_of_count = "Organizer: ";
+
+        return view('campaigns.campaignBrowser')->with('campaigns', $results)
+            ->with('title', $title)
+            ->with('sub_title', $sub_title)
+            ->with('type_of_count', $type_of_count);
 
     }
 

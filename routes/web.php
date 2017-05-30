@@ -55,6 +55,8 @@ Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
 Route::post('/campaigns/create', 'Campaign\CampaignCreateController@saveCampaign');
 
+Route::get('/campaigns/PendingCreations', 'Campaign\CampaignCreationsController@pendingCreations');
+Route::get('/campaigns/FinalizedCreations', 'Campaign\CampaignCreationsController@finalizedCreations');
 Route::get('/campaigns/suggestions', 'Campaign\CampaignSuggestionController@index');
 Route::get('/campaigns/subscriptions', 'Campaign\CampaignSubscriptionController@getMySubs');
 Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');

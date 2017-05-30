@@ -31,4 +31,9 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\ProductReviews'); //relation a user can have more than one post review
     }
+
+    public function suggestedCompanies()
+    {
+        $this->hasMany('App/UGC_Company');
+    }
 }

@@ -11,10 +11,10 @@
 
                 <aside class="col-md-3">
                     <img src="{{ asset('images/campaigns/' . $entity->id . '/logo.jpg') }}"
-                         alt="{{ asset('images/errors/notfound.jpg') }}" style="width: 100%"/>
+                         alt="{{ asset('images/errors/notfound.jpg') }}" style="width: 110%"/>
                 </aside>
 
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-left: 1%">
                     <div class="row">
                         <h1 class="display-3">
 

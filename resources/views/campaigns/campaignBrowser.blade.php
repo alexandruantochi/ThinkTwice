@@ -6,6 +6,9 @@
 
     <div class="panel-heading text-center">
         <h1 class="panel-title display-3">{{$title}}</h1>
+
+        <br>
+
         {{$sub_title}}
     </div>
 
@@ -18,7 +21,7 @@
 
                 <div class="media">
                     <div class="media-left" style="margin-right: 3em">
-                        <a href="#">
+                        <a href="/campaigns/{{$campaign->id}}">
                             <img class="media-object" src="{{asset('images/campaigns/'.$campaign->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
                         </a>
                     </div>
@@ -46,5 +49,7 @@
     @endforeach
 
     {{$campaigns->links()}}
+
+    @include('layouts.addSpaces');
 
 @endsection

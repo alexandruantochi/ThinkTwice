@@ -11,12 +11,11 @@ class CompanyProfileController extends Controller
 {
     public function viewProfile($id)
     {
-
         return Company::where('id',$id)->first();
     }
 
     public function viewProducts($id)
     {
-
+        dd(Company::with('products'));
     }
 }

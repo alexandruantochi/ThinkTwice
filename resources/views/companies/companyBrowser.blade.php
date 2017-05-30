@@ -33,7 +33,7 @@
             <div class="col-10">
                 @foreach ($companies as $company)
                     <div class="row">
-                        <div class="media">
+                        <div class="media" style="margin-bottom: 5px">
                             <div class="media-left" style="margin-right: 3em">
                                 <a href="/companies/profile/{{$company->id}}">
                                     <img class="media-object"

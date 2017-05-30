@@ -28,8 +28,8 @@
                                 <img class="media-object" src="{{asset('images/campaigns/'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
                             </a>
                         @elseif($entity_type == "companies")
-                            <a href="/companies/{{$entity->id}}">
-                                <img class="media-object" src="{{asset('images/companies/'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
+                            <a href="/companies/profile/{{$entity->id}}">
+                                <img class="media-object" src="{{asset('images/companies/'.$entity->id.'/logo.png')}}" alt="..." style="width:10em; height:10em">
                             </a>
                         @endif
 

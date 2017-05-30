@@ -17,7 +17,7 @@ class AssociatedCompaniesController extends Controller
 
         $companies_against = DB::table('agn_campaigns')
                                 ->join('companies', 'agn_campaigns.company_id', '=', 'companies.id')
-                                ->where('agn_campaigns.id', '=', $id)
+                                ->where('agn_campaigns.campaign_id', '=', $id)
                                 ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         $title = $campaign_name[0]->name . ": Companies Against";
@@ -41,7 +41,7 @@ class AssociatedCompaniesController extends Controller
 
         $companies_supported = DB::table('sup_campaigns')
                                 ->join('companies', 'sup_campaigns.company_id', '=', 'companies.id')
-                                ->where('sup_campaigns.id', '=', $id)
+                                ->where('sup_campaigns.campaign_id', '=', $id)
                                 ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         $title = $campaign_name[0]->name . ": Companies Supported";

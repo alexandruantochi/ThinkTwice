@@ -23,8 +23,10 @@ Auth::routes();
 //Alexandru Antochi
 //CompanyProfileController
 Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewProfile');
+Route::get('companies/profile/{id}/fav','Companies\CompanyProfileController@favCompany');
 Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/browse/{id}', 'Companies\CompanyProfileController@viewProducts');
+
 //Company API
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
 //Company Suggestion Controller
@@ -56,6 +58,10 @@ Route::get('/campaigns/byOrganizer', 'Campaign\CampaignsFilterController@byOrgan
 Route::get('/campaigns/filter', 'Campaign\CampaignsFilterController@index');
 
 Route::get('/campaigns/create', 'Campaign\CampaignCreateController@index');
+Route::post('/campaigns/create', 'Campaign\CampaignCreateController@saveCampaign');
+
+Route::get('/campaigns/{id}/subscribe', 'Campaign\CampaignSubscriptionController@subscribe');
+Route::get('/campaigns/{id}/unsubscribe', 'Campaign\CampaignSubscriptionController@unsubscribe');
 
 Route::get('/campaigns/{id}/supported', 'Campaign\AssociatedCompaniesController@companiesSupported');
 Route::get('/campaigns/{id}/against', 'Campaign\AssociatedCompaniesController@companiesAgainst');
@@ -66,7 +72,7 @@ Route::get('/campaigns', 'Campaign\CampaignBrowserController@index');
 Route::get('/NewsFeed', 'NewsFeedController@index');
 
 
-Route::get('/suggestions/{id}', function ($id) {
+Route::get('/campaigns/suggestions', function ($id) {
 
 
     $DICampaigns = new \App\Http\Controllers\Campaign\CustomClasses\DICampaigns();

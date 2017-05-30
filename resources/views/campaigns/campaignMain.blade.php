@@ -10,16 +10,16 @@
             <form class="form-inline" method="get" action="/campaigns/filter">
 
                 <div class="input-group" style="margin-left: 35%; width: 35%">
-                <input name="name" type="text" class="form-control" aria-describedby="basic-addon2">
-                <select name="option" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                    <option selected>Search Option</option>
-                    <option value="byName">By Name</option>
-                    <option value="byCategory">By Category</option>
-                    <option value="byOrganizer">By Organizer</option>
-                </select>
+                    <input name="name" type="text" class="form-control" aria-describedby="basic-addon2">
+                    <select name="option" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option selected>Search Option</option>
+                        <option value="byName">By Name</option>
+                        <option value="byCategory">By Category</option>
+                        <option value="byOrganizer">By Organizer</option>
+                    </select>
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
 

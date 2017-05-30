@@ -14,9 +14,11 @@ class CampaignProfileController extends Controller
                         ->where('id', '=', $id)
                         ->get();
 
-        //dd($campaign);
+        $organizer = DB::table('users')
+                        ->where('id', '=', $campaign[0]->organizer_id)
+                        ->get();
 
-        return view('campaigns.campaignProfile')->with('entity', $campaign[0]);
+        return view('campaigns.campaignProfile')->with('entity', $campaign[0])->with('organizer', $organizer[0]);
 
     }
 }

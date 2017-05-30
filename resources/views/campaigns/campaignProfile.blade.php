@@ -11,10 +11,10 @@
 
                 <aside class="col-md-3">
                     <img src="{{ asset('images/campaigns/' . $entity->id . '/logo.jpg') }}"
-                         alt="{{ asset('images/errors/notfound.jpg') }}" style="width: 100%"/>
+                         alt="{{ asset('images/errors/notfound.jpg') }}" style="width: 110%"/>
                 </aside>
 
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-left: 1%">
                     <div class="row">
                         <h1 class="display-3">
 
@@ -28,9 +28,20 @@
                         </p>
                     </div>
 
+                    <p>Category:
+                        <a href="/campaigns/filter?name={{$entity->category}}&option=byCategory">
+                            {{$entity->category}}
+                        </a>
+                    </p>
 
-                    <p>Category: {{$entity->category}}</p>
-                    <p>Organizer id: {{$entity->organizer_id}}</p>
+
+                    <p>Organizer:
+                        <a href="/campaigns/filter?name={{$organizer->name}}&option=byOrganizer">
+                            {{$organizer->name}}
+                        </a>
+                    </p>
+
+
 
                 </div>
 

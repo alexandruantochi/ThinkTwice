@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col text-center">
                     <a href="">
-                        <img src="{{asset('images/products/id/'.$product->id.'.jpg')}}" class="img-responsive" alt="{{$product->name}}" width="304" height="304">
+                        <img src="{{asset('images/products/'.$product->id.'/logo.jpg')}}" class="img-responsive" alt="{{$product->name}}" width="304" height="304">
                     </a>
                 </div>
                 <div class="col">

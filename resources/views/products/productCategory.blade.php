@@ -11,7 +11,7 @@
                         <div class="col text-center"style="margin: 3px" >
                             <div class="card">
                                 <a  href="/products/profile/{{$value->id}}">
-                                    <img class="card-img-top" src="{{asset('images/products/id/'.$value->id.'.jpg')}}" alt="{{$value->name}}"  width="230" height="200">
+                                    <img class="card-img-top" src="{{asset('images/products/'.$value->id.'/logo.jpg')}}" alt="{{$value->name}}"  width="230" height="200">
                                 </a>
                                 <div class="card-block">
                                     <p class="card-title" title="{{$value->name}}" style="white-space:nowrap; text-overflow:ellipsis; overflow: hidden">

@@ -82,8 +82,10 @@ Route::get('/logout',['uses'=>'UserController@getLogout']);
 //Silitra Dragos
 Route::get('/profile','ProfileController@showprofile');
 Route::get('/profile/edit','EditformController@editprofile');
+Route::post('/profile/save','EditformController@save');
 Route::get('/auth/login','LoginuserController@show');
 Route::get('/auth/register','RegisteruserController@show');
+
 
 //
 Route::get('auth/logout', function() { Auth::logout(); echo "Logged out.";});

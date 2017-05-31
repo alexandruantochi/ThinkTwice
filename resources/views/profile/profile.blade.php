@@ -22,31 +22,27 @@
     <div class="row">
         <div class="col-md-3" style="background-color: #d4d4d4;">
             <div class="well"style="padding-top: 1em;">
+
                 <a class="thumbnail " >
                     <img class="rounded" src="images/users/slide1.jpg" alt="Cinque Terre" style="width: 100%;">
                 </a>
 
                 <dl class="row"style="padding-top: 1em;">
                     <dt class="col-sm-3">Name:</dt>
-                    <dd class="col-sm-9 "><p class="text-right">Mc Gonagal</p></dd>
+                    <dd class="col-sm-9 "><p class="text-right">{{$name}}</p></dd>
 
-                    <dt class="col-sm-3">Surname:</dt>
-                    <dd class="col-sm-9"><p class="text-right">Jordan</p></dd>
-
-                    <dt class="col-sm-3">Age:</dt>
-                    <dd class="col-sm-9"><p class="text-right">36{{--will be calculated by date of birth--}}</p></dd>
+                    <dt class="col-sm-3">Birth date:</dt>
+                    <dd class="col-sm-9"><p class="text-right">{{$age}}</p></dd>
 
                     <dt class="col-sm-3">Gender:</dt>
-                    <dd class="col-sm-9"><p class="text-right">Male</p></dd>
+                    <dd class="col-sm-9"><p class="text-right">{{$gender}}</p></dd>
 
                     <dt class="col-sm-3">Location:</dt>
-                    <dd class="col-sm-9"><p class="text-right">Egypt</p></dd>
+                    <dd class="col-sm-9"><p class="text-right">{{$location}}</p></dd>
 
                     <dt class="col-sm-3">Occupation:</dt>
-                    <dd class="col-sm-9"><p class="text-right">Mechanic</p></dd>
+                    <dd class="col-sm-9"><p class="text-right">{{$occupation}}</p></dd>
 
-                    <dt class="col-sm-3">Religion:</dt>
-                    <dd class="col-sm-9"><p class="text-right">Catholic</p></dd>
                 </dl>
             </div>
         </div>

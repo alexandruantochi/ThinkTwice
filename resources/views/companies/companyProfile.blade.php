@@ -33,23 +33,27 @@
         @if($isFaved==0)
             <div class="row">
                 <a href="{{$company->id}}/fav">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-default" style="margin-right: 5px">
                         <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Fav this company
                     </button>
                     </form>
                 </a>
-            </div>
+
 
         @else
             <div class="row">
                 <a href="{{$company->id}}/fav">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-default" style="margin-right: 5px">
                         <span class="glyphicon glyphicon-book" aria-hidden="true"></span> UnFav this company
                     </button>
                 </a>
 
-            </div>
+
         @endif
+
+                <a href="../browse/{{$company->id}}" ><button class="btn btn-default">View Products</button></a>
+            </div>
+
     </div>
 
 

@@ -40,6 +40,7 @@ class CampaignCreationsController extends Controller
         $pending = DB::table('campaigns_pending')
             ->leftjoin('campaigns', 'campaigns.name', '=', 'campaigns_pending.name')
             ->whereRaw('campaigns_pending.organizer_id = ' . Auth::id() . ' AND campaigns.organizer_id IS NULL')
+            ->selectRaw('campaigns_pending.*')
             ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
 

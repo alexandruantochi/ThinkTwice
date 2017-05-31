@@ -3,7 +3,9 @@
 
     <div class="panel-heading text-center">
         <h1 class="panel-title display-3">{{$title}} {{$count->number}}</h1>
+        <br>
         <p><strong>{{$sub_title}}</strong></p>
+        <br>
     </div>
     @if($count->number>0)
         <div class="container" align="center">
@@ -28,8 +30,5 @@
         @else
         <h1 class="text-center">We did not found any results :(</h1>
     @endif
-
-
-
-
+    
 @endsection

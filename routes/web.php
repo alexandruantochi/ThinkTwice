@@ -87,5 +87,3 @@ Route::get('/auth/register','RegisteruserController@show');
 //
 Route::get('auth/logout', function() { Auth::logout(); echo "Logged out.";});
 
-
-Route::get('/home', 'home\HomeController@index');

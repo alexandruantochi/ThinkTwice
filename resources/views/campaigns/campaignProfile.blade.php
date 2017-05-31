@@ -53,15 +53,20 @@
                     </p>
 
                     @if($is_authenticated)
-                        @if($is_already_subscribed->count)
-                            <a href="/campaigns/{{$entity->id}}/unsubscribe" style="color: green">
-                                <button type="submit" class="btn btn-outline-danger">Unsubscribe</button>
-                            </a>
+                        @if($is_organizer_of_the_campaign)
+                            <button type="submit" class="btn btn-green">My Campaign</button>
                         @else
-                            <a href="/campaigns/{{$entity->id}}/subscribe" style="color: green">
-                                <button type="submit" class="btn btn-outline-warning">Subscribe</button>
-                            </a>
+                            @if($is_already_subscribed->count)
+                                <a href="/campaigns/{{$entity->id}}/unsubscribe" style="color: green">
+                                    <button type="submit" class="btn btn-outline-danger">Unsubscribe</button>
+                                </a>
+                            @else
+                                <a href="/campaigns/{{$entity->id}}/subscribe" style="color: green">
+                                    <button type="submit" class="btn btn-outline-warning">Subscribe</button>
+                                </a>
+                            @endif
                         @endif
+
 
                     @else
 

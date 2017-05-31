@@ -31,6 +31,8 @@
                             <a href="/companies/profile/{{$entity->id}}">
                                 <img class="media-object" src="{{asset('images/companies/'.$entity->id.'/logo.png')}}" alt="..." style="width:10em; height:10em">
                             </a>
+                        @elseif($entity_type == "pending")
+                            <img class="media-object" src="{{asset('images/campaigns/pending'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
                         @endif
 
                     </div>

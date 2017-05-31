@@ -34,7 +34,7 @@ Route::post('companies/suggest', 'Companies\SuggestCompanyController@saveCompany
 //Company Administration
 Route::get('companies/admin','Companies\CompanyAdminController@viewCompanies');
 Route::get('companies/edit/{id}','Companies\CompanyAdminController@editCompany');
-Route::get('companies/delete/{id}','Companies\CompanyAdminController@deleteCompany');
+Route::get('companies/admin/delete/{id}','Companies\CompanyAdminController@deleteCompany');
 Route::post('companies/edit/{id}','Companies\CompanyAdminController@saveEditedCompany');
 Route::get('companies/admin/ugc','Companies\CompanyAdminController@viewSuggestions');
 Route::get('companies/admin/ugc_delete/{id}','Companies\CompanyAdminController@deleteSuggestion');

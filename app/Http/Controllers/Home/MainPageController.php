@@ -29,6 +29,7 @@ class MainPageController extends Controller
             ->paginate(4);
 
 
+
         return view('home')
             ->with('popular_campaigns',$popular_campaigns)
             ->with('newest_companies',$newest_companies);

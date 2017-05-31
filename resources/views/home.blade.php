@@ -1,4 +1,6 @@
 @extends('layouts.master')
+
+
 @section('content')
 
 <div class="jumbotron  jumbotron-fluid text-center">
@@ -51,7 +53,6 @@
     <h3 class="panel-title">Top Newest Companies Added</h3>
 </div>
 <div class="panel-body" style="background-color: #d6dbdc; margin: 3em; padding-top: 2em;padding-bottom: 2em;">
-
     <div class="col-md-12">
         <div class="row text-center">
             @foreach($newest_companies as $value)
@@ -67,10 +68,11 @@
                     </div>
                 </div>
             </div>
-            @endforeachd
+            @endforeach
         </div>
     </div>
 </div>
 </div>
 </div>
+
 @endsection

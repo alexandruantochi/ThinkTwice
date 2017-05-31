@@ -94,7 +94,6 @@ class CompanyAdminController extends Controller
         UGC_Company::destroy($id);
 
         return back();
-
     }
 
     public function approveSuggestion($id)

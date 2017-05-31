@@ -32,7 +32,7 @@ class CampaignsPopularityController extends Controller
             ->with('title', $title)
             ->with('sub_title', $sub_title)
             ->with('type_of_count', $type_of_count)
-            ->with('entity_type', $entity_type);;
+            ->with('entity_type', $entity_type);
 
     }
 }

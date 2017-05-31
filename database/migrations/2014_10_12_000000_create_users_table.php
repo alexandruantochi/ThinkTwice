@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->char('gender')->nullable();
             $table->string('location')->nullable();
             $table->string('occupation')->nullable();
-            //fuck religion ok :D?
             $table->rememberToken();
             $table->timestamps();
         });

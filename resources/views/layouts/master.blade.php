@@ -24,7 +24,7 @@
                 <a class="nav-link" href="/campaigns">Campaigns</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/companies">Companies</a>
+                <a class="nav-link" href="/companies/browse">Companies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/products">Products</a>
@@ -34,7 +34,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/profile" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/campaigns/subscriptions">My Campaigns</a>
+                            <a class="dropdown-item" href="/campaigns/PendingCreations">My Pending Creations</a>
+                            <a class="dropdown-item" href="/campaigns/FinalizedCreations">My Finalized Creations</a>
+                            <a class="dropdown-item" href="/campaigns/subscriptions">My Subscriptions</a>
                             <a class="dropdown-item" href="/campaigns/suggestions">My Suggestions</a>
                             <a class="dropdown-item" href="/campaigns/create">Create Campaign </a>
                             <a class="dropdown-item" href="/logout">Log out</a>

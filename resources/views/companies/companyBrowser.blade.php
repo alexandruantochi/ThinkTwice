@@ -25,6 +25,10 @@
                 <a href="?type=nameZA" class="list-group-item-action">Alphabetical Descending</a>
                 <a href="?type=supported" class="list-group-item-action">Most supported</a>
                 <a href="?type=against" class="list-group-item-action">Most against</a>
+
+                <a href="suggest" style="margin-top: 5%">
+                    <button class="btn btn-default">     Suggest a company    </button>
+                </a>
             </div>
 
 
@@ -57,6 +61,8 @@
                     </div>
                 @endforeach
             </div>
+
+
 
         </div>
     </div>

@@ -38,19 +38,23 @@ class CampaignCreationsController extends Controller
     function pendingCreations() {
 
         $pending = DB::table('campaigns_pending')
-            ->where('campaigns_pending.organizer_id', '=', Auth::id())
+            ->leftjoin('campaigns', 'campaigns.name', '=', 'campaigns_pending.name')
+            ->whereRaw('campaigns_pending.organizer_id = ' . Auth::id() . ' AND campaigns.organizer_id IS NULL')
+            ->selectRaw('campaigns_pending.*')
             ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
+
+
 
         $title = "My Pending Creations";
         $sub_title = "";
         $type_of_count = "";
-        $entity_type = "campaigns";
+        $entity_type = "pending";
 
         return view('campaigns.campaignBrowser')->with('entities', $pending)
             ->with('title', $title)
             ->with('sub_title', $sub_title)
             ->with('type_of_count', $type_of_count)
             ->with('entity_type', $entity_type);
-        
+
     }
 }

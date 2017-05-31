@@ -13,7 +13,7 @@ final class SuggestionsAlg {
 
     private $DIObject;
     private $categories;
-    private $exponentiation_factor = 2;
+    private $exponentiation_factor = 1;
 
     public function __construct($DIObject, $categories) {
 

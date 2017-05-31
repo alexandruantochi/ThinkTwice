@@ -26,7 +26,6 @@ Route::get('companies/profile/{id}', 'Companies\CompanyProfileController@viewPro
 Route::get('companies/profile/{id}/fav','Companies\CompanyProfileController@favCompany');
 Route::get('companies/browse', 'Companies\CompanyBrowserController@main');
 Route::get('companies/browse/{id}', 'Companies\CompanyProfileController@viewProducts');
-
 //Company API
 Route::get('companies/API/{name}', 'Companies\CompanyAPIController@main');
 //Company Suggestion Controller
@@ -82,8 +81,10 @@ Route::get('/logout',['uses'=>'UserController@getLogout']);
 //Silitra Dragos
 Route::get('/profile','ProfileController@showprofile');
 Route::get('/profile/edit','EditformController@editprofile');
+Route::post('/profile/save','EditformController@save');
 Route::get('/auth/login','LoginuserController@show');
 Route::get('/auth/register','RegisteruserController@show');
+
 
 //
 Route::get('auth/logout', function() { Auth::logout(); echo "Logged out.";});

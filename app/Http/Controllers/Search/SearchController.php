@@ -65,6 +65,8 @@ class SearchController extends Controller
             ->with('route',$route)
             ->with('image',$image);
         //return $results;
+
+
     }
 
     function campaign_name(Request $request){

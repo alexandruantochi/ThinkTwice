@@ -5,7 +5,7 @@
 
         <form method="POST" action="/profile/save">
             <div class="row">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
             <div class="col-md-6" style="margin-top: 10%;">
 
                 <div class="form-group">

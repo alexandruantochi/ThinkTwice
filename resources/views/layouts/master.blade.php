@@ -34,6 +34,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/profile" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/profile">My profile</a>
                             <a class="dropdown-item" href="/campaigns/PendingCreations">My Pending Creations</a>
                             <a class="dropdown-item" href="/campaigns/FinalizedCreations">My Finalized Creations</a>
                             <a class="dropdown-item" href="/campaigns/subscriptions">My Subscriptions</a>
@@ -42,6 +43,10 @@
                             <a class="dropdown-item" href="/logout">Log out</a>
                         </div>
                     </li>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
                 </li>
             @endif
         </ul>

@@ -111,7 +111,7 @@
 
         <div class="col-sm-2"style="padding-top: 1em;background-color: #d4d4d4  "">
             <div >
-                <a href="/home"><button type="button" class="btn btn-primary btn-danger btn-block">Log out</button></a>
+                <a href="/home"><button type="button" class="btn btn-primary btn-danger btn-block">Home page</button></a>
                 <a href="/profile/edit"><button type="button" class="btn btn-primary btn-block" >Edit contact</button></a>
                 <br>
             </div>

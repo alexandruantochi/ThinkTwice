@@ -19,35 +19,35 @@ class UsersTableSeeder extends Seeder
             array(
                 'name' => 'Hung Lo',
                 'email' => 'hunglo20@gmail.com',
-                'password' => 'smantana',
+                'password' => bcrypt('smantana'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name' => 'Daniel Abagiu',
                 'email' => 'danielabagiu@gmail.com',
-                'password' => 'savarina',
+                'password' => bcrypt('savarina'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name' => 'Floricica Dansatoarea',
                 'email' => 'huooooo@gmail.com',
-                'password' => 'huooooo',
+                'password' => bcrypt('huooooo'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name' => 'Bruce Lee',
                 'email' => 'BruceLee@gmail.com',
-                'password' => 'be_like_water',
+                'password' => bcrypt('be_like_water'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'name' => 'Mr. T',
                 'email' => 'coolT@gmail.com',
-                'password' => 'mysterious',
+                'password' => bcrypt('mysterious'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             )

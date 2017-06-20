@@ -43,6 +43,7 @@ class ProfileController extends Controller
             ->paginate(CampaignConfigurations::get_Instance()->num_results_page);
 
         return view('profile.profile')->with('entities', $subs)
+            ->with('userid',Auth::id())
             ->with('entity_type',$entity_type)
             ->with('type_of_count',$type_of_count)
             ->with ('name',$name)

@@ -29,7 +29,7 @@
 
             </div>
 
-            <div class="col-md-6" style="margin-top: 10%;">
+            <div class="col-md-6" style="margin-top: 10%; background-color: #d4d4d4;;">
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <select class="form-control" name="gender">
@@ -41,7 +41,9 @@
                 </div>
 
                 <label for="date_of_birth">Change your date of birth
-                </label> <br> <input name="date_of_birth" style="color:black" type="date" placeholder="YYYY-MM-DD"/>
+                </label>
+                <br>
+                <input  type="text" name="date_of_birth" style="color:black" placeholder="YYYY-MM-DD"/>
                 <br>
                 <br>
                 <div class="form-group">
@@ -56,6 +58,7 @@
                     <label for="ocupation">New ocupation</label>
                     <input type="text" class="form-control" name="occupation" aria-describedby="description" placeholder="Enter a new ocupation">
                 </div>
+                <p class="text-danger">Fields left empty in this area will clear data on the profile!</p>
 
 
             </div>

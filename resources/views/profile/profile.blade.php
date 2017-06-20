@@ -24,7 +24,7 @@
             <div class="well"style="padding-top: 1em;">
 
                 <a class="thumbnail " >
-                    <img class="rounded" src="images/users/slide1.jpg" alt="Cinque Terre" style="width: 100%;">
+                    <img class="rounded" src="images/users/slide1.jpg" alt="image_placeholder" style="width: 100%;">
                 </a>
 
                 <dl class="row"style="padding-top: 1em;">
@@ -50,7 +50,9 @@
 
         <div class="col-md-7"style="padding-top: 1em;">
 
-
+<div>
+    <h4><ins>User activity</ins></h4>
+</div>
             @foreach($entities as $entity)
                 <div class="container">
                     <div class="row">
@@ -96,14 +98,16 @@
 
             {{$entities->links()}}
 
-            @include('layouts.addSpaces');
+            <br>
+            <br>
+
 
 
 
         </div>
 
 
-        <div class="col-sm-2"style="padding-top: 1em;background-color: #d4d4d4  "">
+        <div class="col-sm-2"style="padding-top: 1em;background-color: #d4d4d4  ">
             <div >
                 <a href="/home"><button type="button" class="btn btn-primary btn-danger btn-block">Home page</button></a>
                 <a href="/profile/edit"><button type="button" class="btn btn-primary btn-block" >Edit contact</button></a>

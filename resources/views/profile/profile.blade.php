@@ -50,61 +50,55 @@
 
         <div class="col-md-7"style="padding-top: 1em;">
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="images/campaigns/3/3.jpg" alt="First campaign" style="width: 100%; height: 20em;  !important;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Global warming</h3>
-                            <p>The climate changes is one of the result of global warming.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block img-fluid" src="images/campaigns/1/1.jpg" alt="Second campaign" style="width: 100%; height: 20em;  !important;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Save bees</h3>
-                            <p>With the dissapearance of the bees, polination is impossible.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block img-fluid" src="images/campaigns/2/2.jpg" alt="Third campaign" style="width: 100%; height: 20em;  !important;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Stop pollution</h3>
-                            <p>Pollution is one of the elements that destroy the environment.</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
 
-            <div class="card text-center">
-                <div class="card-header">
-                    User activity
+            @foreach($entities as $entity)
+                <div class="container">
+                    <div class="row">
+
+                        <div class="media">
+                            <div class="media-left" style="margin-right: 3em">
+
+                                @if($entity_type == "campaigns")
+                                    <a href="/campaigns/{{$entity->id}}">
+                                        <img class="media-object" src="{{asset('images/campaigns/'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
+                                    </a>
+                                @elseif($entity_type == "companies")
+                                    <a href="/companies/profile/{{$entity->id}}">
+                                        <img class="media-object" src="{{asset('images/companies/'.$entity->id.'/logo.png')}}" alt="..." style="width:10em; height:10em">
+                                    </a>
+                                @elseif($entity_type == "pending")
+                                    <img class="media-object" src="{{asset('images/campaigns/pending'.$entity->id.'/logo.jpg')}}" alt="..." style="width:10em; height:10em">
+                                @endif
+
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading display-4" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden">{{$entity->name}}</h3>
+
+                                @if($type_of_count != "")
+
+                                    <h4 class="media-heading" style="color:green">{{ $type_of_count . $entity->count}}</h4>
+
+                                @endif
+
+                                <details style="...">
+                                    <summary>Description</summary>
+
+                                    <p class="card-text">{{$entity->description}}</p>
+                                </details>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card-block">
-                    <p class="card-text">
-                    <h2>Resigned from <a href="#" class="alert-link">Stop animal testing</a>.</h2>
-                    <h2>Rated 5 stars the product <a href="#" class="alert-link">Flimsy Umbrella</a>.</h2>
-                    <h2>Participated in <a href="#" class="alert-link">Global warming</a>.</h2>
-                    <h2>Participated in <a href="#" class="alert-link">Stop animal testing</a>.</h2>
-                    <h2>Participated in <a href="#" class="alert-link">Stop pollution</a>.</h2>
-                    <h2>Participated in <a href="#" class="alert-link">Save the bees</a>.</h2>
-                    <h2>Joined <a href="#" class="alert-link">Think Twice</a> on 25/04/2017.</h2>
-                    </p>
-                </div>
-            </div>
+
+                <br>
+            @endforeach
+
+            {{$entities->links()}}
+
+            @include('layouts.addSpaces');
+
+
 
         </div>
 

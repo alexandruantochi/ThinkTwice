@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Input;
 
 class EditformController extends Controller
@@ -21,9 +22,15 @@ class EditformController extends Controller
 
 
      if($request->get('password')!=null) {
-         DB::table('users')
-             ->where('users.id',$user_id)
-             ->update(['password' => $request->get('password')]);
+
+         if ($request->get('password')!=$request->get('newpassword'))
+         {return view('profile\edit\error');}
+         else
+         {
+             DB::table('users')
+                 ->where('users.id', $user_id)
+                 ->update(['password' => bcrypt($request->get('password'))]);
+         }
      }
      if($request->get('name')!=null) {
          DB::table('users')
@@ -36,7 +43,7 @@ class EditformController extends Controller
             ->update(['email' =>$request->get('email')]);
      }
         DB::table('users')
-            ->where('users.id',$user_id)->update(['date_of_birth' => $request->get('date')]);
+            ->where('users.id',$user_id)->update(['date_of_birth' => $request->get('date_of_birth')]);
          DB::table('users')
              ->where('users.id',$user_id)->update(['gender' => $request->get('gender')]);
          DB::table('users')
@@ -44,8 +51,17 @@ class EditformController extends Controller
           DB::table('users')
               ->where('users.id',$user_id)->update(['occupation' => $request->get('occupation')]);
 
+
+
+        if ($request->hasFile('file')) {
+            $logo = $request->file('file');
+            $logo->storeAs("images/profiles/" . $user_id . 'logo.png');
+        }
+
+
         return back();
     }
+
     public function editprofile()
     {
         return view('profile\edit\editform');
